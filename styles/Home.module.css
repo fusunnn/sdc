@@ -1,62 +1,77 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap");
-
-.container {
+.home {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  /* font-family: "Josefin Sans", sans-serif; */
 }
 
-.main {
-  padding: 4rem 4rem;
-  flex: 0.85;
+.nav {
   display: flex;
   align-items: center;
-  background-color: #f9f8f4;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+}
+
+.nav > ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.nav > ul > li {
+  display: inline-block;
+  color: #000;
+  padding-right: 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.nav > ul > li > a {
+  transition: 0.2s;
+}
+
+.nav > ul > li > a:hover {
+  border-bottom: 0.2rem solid var(--accent);
+}
+
+.home__content {
+  display: flex;
+  padding: 2rem 4rem;
+  justify-content: space-evenly;
+}
+
+.home__left {
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home__left__bot__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.walk__container {
+  width: 45%;
+}
+
+.stripes__container {
+  width: 35rem;
+}
+
+.teacups__container {
+  width: 85%;
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: bold;
-  color: #00a9e3;
+  color: var(--main);
   transition: 0.2s;
   cursor: default;
 }
 
 .title:hover {
-  color: #fbc524;
-}
-
-.nav {
-  background-color: #f9f8f4;
-  flex: 0.15;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 4rem;
-}
-
-.navList {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  /* background-color: #f9f8f4; */
-}
-
-.navList > li {
-  display: inline-block;
-  color: #000;
-  padding-right: 2rem;
-  font-weight: 500;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-.navList > li > a {
-  transition: 0.2s;
-}
-.navList > li > a:hover {
-  border-bottom: 0.2rem solid #fbc524;
+  color: var(--accent);
 }
 
 .contact {
@@ -69,42 +84,17 @@
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 2.25rem;
-  /* padding: 2rem 0; */
-}
-
-.homeContainer {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex: 1;
-}
-.imageContainer {
-  width: 30rem;
-}
-
-.bioContainer {
-  /* height: 100%; */
-  width: 40%;
 }
 
 .bioSpanName {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #00a9e3;
+  color: var(--main);
 }
 
-/* .bioSpanAge {
-  font-weight: bold;
-  color: #829a55;
-}
-
-.bioSpanSweden {
-  font-weight: bold;
-  color: #fbc524;
-} */
 .bioSpanBT1 {
   font-weight: bold;
-  color: #fbc524;
+  color: var(--accent);
 }
 
 .bioSpanBT2 {
@@ -112,15 +102,15 @@
   color: #ec5b44;
 }
 
-.styledArrow {
+.styled__arrow {
   width: 0;
   height: 40px;
-  border: 1px solid #00a9e3;
+  border: 1px solid var(--main);
   position: absolute;
   animation: scroll 1.5s infinite;
   -webkit-animation: scroll 1.5s infinite;
 }
-.styledArrow::after {
+.styled__arrow::after {
   content: "";
   display: block;
   position: absolute;
@@ -128,8 +118,7 @@
   left: -5px;
   width: 1px;
   height: 10px;
-
-  border-top: 10px solid #00a9e3;
+  border-top: 10px solid var(--main);
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
 }
@@ -139,7 +128,7 @@
     height: 40px;
   }
   30% {
-    height: 70px;
+    height: 85px;
   }
   60% {
     height: 40px;
@@ -150,41 +139,84 @@
     height: 40px;
   }
   30% {
-    height: 70px;
+    height: 85px;
   }
   60% {
     height: 40px;
   }
 }
 
-.crabContainer {
-  position: absolute;
+.books__section {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4rem;
+  background: #00aae333;
 }
 
-.walkContainer {
-  position: relative;
-  left: 6rem;
-  width: 15rem;
+.books__section__title {
+  font-weight: bold;
+  font-size: 1.8rem;
 }
 
-.crabContainer {
-  bottom: 6rem;
-  right: 1rem;
+.book__cover__section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.book__cover__container {
+  width: 20rem;
+}
+
+.book__cover {
+  cursor: pointer;
+}
+
+.death__cleaning__section,
+.art__aging__section {
+  display: flex;
+  width: 40rem;
+  color: #000;
+  font-size: 1.2rem;
+  line-height: 2.25rem;
+  font-weight: 500;
+  padding: 2rem;
+}
+
+.death__cleaning__bio,
+.art__aging__bio {
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.death__cleaning__more__button,
+.art__aging__more__button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9rem;
+  height: 3rem;
+  transition: 0.2s;
+  color: black;
+}
+
+.death__cleaning__more__button {
+  border: 2px solid var(--accent);
+}
+
+.art__aging__more__button {
+  border: 2px solid #ec5b44;
+}
+
+.death__cleaning__more__button:hover,
+.art__aging__more__button:hover {
   width: 10rem;
 }
 
-.teacupsContainer {
-  position: relative;
-  width: 25rem;
-  left: 2rem;
-  bottom: 1.5rem;
-}
-
-@media screen and (max-width: 1024px) {
-  .homeContainer {
-    flex-direction: column;
-  }
-  .bioContainer {
-    width: 90%;
-  }
+.death__cleaning__bio__text,
+.art__aging__bio__text {
+  height: 10rem;
 }

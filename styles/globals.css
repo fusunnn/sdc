@@ -7,6 +7,7 @@ body {
   --bg: #f9f8f4;
   --main: #00a9e3;
   --accent: #fbc524;
+  --aging-color: #ec5b44;
 
   background-color: var(--bg);
 }

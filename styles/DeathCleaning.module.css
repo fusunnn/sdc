@@ -1,0 +1,14 @@
+.container {
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+.content__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem 4rem;
+}
+.cover__container {
+  width: 20rem;
+}

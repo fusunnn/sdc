@@ -2,17 +2,42 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+
 import Stripes from "../public/assets/hp-pt-stripes.png";
 import Walk from "../public/assets/dleh.png";
-import Crabs from "../public/assets/crabs.png";
 import TeaCups from "../public/assets/tea-cups.png";
 import DeathCleaningCover from "../public/assets/death-cleaning.png";
 import ArtOfAgingCover from "../public/assets/art-of-aging.png";
-import { CgChevronRight } from "react-icons/cg";
+
+import Carousel from "react-elastic-carousel";
+
+import { CgChevronRight, CgChevronLeft } from "react-icons/cg";
+
+import { Nav } from "../components/Nav";
 
 const Home: NextPage = () => {
   const redirect = (url: string) => {
     window.open(url, "_blank");
+  };
+
+  const renderArrow = (type: any, onClick: () => any) => {
+    if (type === "PREV") {
+      return (
+        <CgChevronLeft
+          size={32}
+          onClick={onClick}
+          className={styles.carousel__arrow}
+        />
+      );
+    } else {
+      return (
+        <CgChevronRight
+          size={32}
+          onClick={onClick}
+          className={styles.carousel__arrow}
+        />
+      );
+    }
   };
 
   return (
@@ -27,28 +52,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className={styles.main}>
         <section className={styles.home}>
-          <nav className={styles.nav}>
-            <p className={styles.title}>
-              Margareta <br /> Magnusson
-            </p>
-            <ul>
-              <li>
-                <a>Books</a>
-              </li>
-              <li>
-                <a>Press</a>
-              </li>
-              <li>
-                <a>TV and Social Media</a>
-              </li>
-              <li>
-                <a>Contact</a>
-              </li>
-            </ul>
-          </nav>
-
+          <Nav />
           <div className={styles.home__content}>
             <div className={styles.home__left}>
               <div className={styles.walk__container}>
@@ -122,7 +128,10 @@ const Home: NextPage = () => {
                   A book of humorous and charming advice for embracing life and
                   aging joyfully.
                 </p>
-                <div className={styles.art__aging__more__button}>
+                <div
+                  className={styles.art__aging__more__button}
+                  href="/swedish-death-cleaning"
+                >
                   Learn More <CgChevronRight />{" "}
                 </div>
               </div>
@@ -140,6 +149,40 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className={styles.videos__section}>
+          <p className={styles.videos__section__title}>Videos</p>
+          <Carousel
+            renderArrow={({ type, onClick }) => renderArrow(type, onClick)}
+            renderPagination={() => {
+              return <div />;
+            }}
+          >
+            <div className={styles.carousel__element__container}>
+              <iframe
+                width="950"
+                height="534"
+                src="https://www.youtube.com/embed/yv6fBOZlMgE"
+                title="The Gentle Art of Swedish Death Cleaning"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <div className={styles.carousel__element__container}>
+              <iframe
+                width="966"
+                height="543"
+                src="https://www.youtube.com/embed/3XNbAbhQZFA"
+                title="I tried Swedish Death Cleaning (and it worked!)"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </Carousel>
         </section>
       </main>
     </div>

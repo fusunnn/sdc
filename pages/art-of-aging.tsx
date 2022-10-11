@@ -13,7 +13,11 @@ const ArtOfAging = () => {
       <Nav />
       <div className={styles.content__container}>
         <div className={styles.cover__container}>
-          <Image src={ArtOfAgingCover} placeholder="blur" />
+          <Image
+            src={ArtOfAgingCover}
+            placeholder="blur"
+            alt="3d-cover-aging"
+          />
         </div>
       </div>
     </div>

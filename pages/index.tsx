@@ -11,7 +11,8 @@ import TeaCups from "../public/assets/tea-cups.png";
 import DeathCleaningCover from "../public/assets/death-cleaning.png";
 import ArtOfAgingCover from "../public/assets/art-of-aging.png";
 
-import Carousel from "react-elastic-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 import { CgChevronRight, CgChevronLeft } from "react-icons/cg";
 
@@ -42,6 +43,14 @@ const Home: NextPage = () => {
     }
   };
 
+  const items = [
+    { id: 1, title: "item #1" },
+    { id: 2, title: "item #2" },
+    { id: 3, title: "item #3" },
+    { id: 4, title: "item #4" },
+    { id: 5, title: "item #5" },
+  ];
+
   return (
     <div className={styles.container}>
       <Head>
@@ -60,7 +69,7 @@ const Home: NextPage = () => {
           <div className={styles.home__content}>
             <div className={styles.home__left}>
               <div className={styles.walk__container}>
-                <Image src={Walk} />
+                <Image src={Walk} alt="walk-sketch" />
               </div>
               <p className={styles.bio}>
                 <span className={styles.bioSpanName}> Margareta Magnusson</span>{" "}
@@ -83,7 +92,7 @@ const Home: NextPage = () => {
                   <div className={styles.styled__arrow} />
                 </div>
                 <div className={styles.teacups__container}>
-                  <Image src={TeaCups} />
+                  <Image src={TeaCups} alt="teacups-sketch" />
                 </div>
                 <div className={styles.arrow__container}>
                   <div className={styles.styled__arrow} />
@@ -91,7 +100,11 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className={styles.stripes__container}>
-              <Image placeholder="blur" src={Stripes} />
+              <Image
+                placeholder="blur"
+                src={Stripes}
+                alt="margareta-portrait"
+              />
             </div>
           </div>
         </section>
@@ -118,6 +131,7 @@ const Home: NextPage = () => {
                     className={styles.book__cover}
                     placeholder="blur"
                     src={DeathCleaningCover}
+                    alt="3d-cover-sdc"
                   />
                 </div>
               </Link>
@@ -142,6 +156,7 @@ const Home: NextPage = () => {
                     className={styles.book__cover}
                     placeholder="blur"
                     src={ArtOfAgingCover}
+                    alt="3d-cover-aging"
                   />
                 </div>
               </Link>
@@ -151,24 +166,23 @@ const Home: NextPage = () => {
 
         <section className={styles.videos__section}>
           <p className={styles.videos__section__title}>Videos</p>
-          <Carousel
-            renderArrow={({ type, onClick }) => renderArrow(type, onClick)}
-            renderPagination={() => {
-              return <div />;
-            }}
-          >
-            <div className={styles.carousel__element__container}>
-              <iframe
-                width="950"
-                height="534"
-                src="https://www.youtube.com/embed/yv6fBOZlMgE"
-                title="The Gentle Art of Swedish Death Cleaning"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </Carousel>
+          {/* <Carousel showStatus={false} showThumbs={false}> */}
+          {/* <div> */}
+          <div className={styles.video__container}>
+            <iframe
+              width="950"
+              height="534"
+              src="https://www.youtube.com/embed/yv6fBOZlMgE"
+              title="The Gentle Art of Swedish Death Cleaning"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          {/* </div>
+
+            {} */}
+          {/* </Carousel> */}
         </section>
       </main>
     </div>

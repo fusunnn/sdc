@@ -191,3 +191,8 @@
   margin-top: 25%;
   cursor: pointer;
 }
+.video__container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

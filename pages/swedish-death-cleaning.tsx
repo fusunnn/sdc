@@ -12,7 +12,11 @@ const SwedishDeathCleaning = () => {
       <Nav />
       <div className={styles.content__container}>
         <div className={styles.cover__container}>
-          <Image src={DeathCleaningCover} placeholder="blur" />
+          <Image
+            src={DeathCleaningCover}
+            placeholder="blur"
+            alt="3d-cover-sdc"
+          />
         </div>
       </div>
     </div>

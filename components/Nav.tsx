@@ -24,7 +24,11 @@ export const Nav = () => {
           <a>TV and Social Media</a>
         </li>
         <li>
-          <a href="https://www.susannalea.com/contact/" target="_blank">
+          <a
+            href="https://www.susannalea.com/contact/"
+            target="_blank"
+            rel="noreferrer"
+          >
             Contact
           </a>
         </li>

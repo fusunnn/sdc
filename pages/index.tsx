@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
+
 import styles from "../styles/Home.module.css";
 
 import Stripes from "../public/assets/hp-pt-stripes.png";
@@ -104,22 +106,21 @@ const Home: NextPage = () => {
                   home in order while reflecting on the tiny joys that make up a
                   long life.
                 </p>
-                <div className={styles.death__cleaning__more__button}>
-                  Learn More <CgChevronRight />{" "}
+                <Link href="/swedish-death-cleaning">
+                  <div className={styles.death__cleaning__more__button}>
+                    Learn More <CgChevronRight />{" "}
+                  </div>
+                </Link>
+              </div>
+              <Link href="/swedish-death-cleaning">
+                <div className={styles.book__cover__container}>
+                  <Image
+                    className={styles.book__cover}
+                    placeholder="blur"
+                    src={DeathCleaningCover}
+                  />
                 </div>
-              </div>
-              <div className={styles.book__cover__container}>
-                <Image
-                  className={styles.book__cover}
-                  placeholder="blur"
-                  src={DeathCleaningCover}
-                  onClick={() =>
-                    redirect(
-                      "https://www.amazon.com/Gentle-Art-Swedish-Death-Cleaning/dp/1501173243"
-                    )
-                  }
-                />
-              </div>
+              </Link>
             </div>
 
             <div className={styles.art__aging__section}>
@@ -128,25 +129,22 @@ const Home: NextPage = () => {
                   A book of humorous and charming advice for embracing life and
                   aging joyfully.
                 </p>
-                <div
-                  className={styles.art__aging__more__button}
-                  href="/swedish-death-cleaning"
-                >
-                  Learn More <CgChevronRight />{" "}
+                <Link href="/art-of-aging">
+                  <div className={styles.art__aging__more__button}>
+                    Learn More <CgChevronRight />{" "}
+                  </div>
+                </Link>
+              </div>
+
+              <Link href="/art-of-aging">
+                <div className={styles.book__cover__container}>
+                  <Image
+                    className={styles.book__cover}
+                    placeholder="blur"
+                    src={ArtOfAgingCover}
+                  />
                 </div>
-              </div>
-              <div className={styles.book__cover__container}>
-                <Image
-                  className={styles.book__cover}
-                  placeholder="blur"
-                  src={ArtOfAgingCover}
-                  onClick={() =>
-                    redirect(
-                      "https://www.amazon.com/Swedish-Art-Aging-Well-Probably-ebook/dp/B09JPGWC14"
-                    )
-                  }
-                />
-              </div>
+              </Link>
             </div>
           </div>
         </section>
@@ -165,21 +163,9 @@ const Home: NextPage = () => {
                 height="534"
                 src="https://www.youtube.com/embed/yv6fBOZlMgE"
                 title="The Gentle Art of Swedish Death Cleaning"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-
-            <div className={styles.carousel__element__container}>
-              <iframe
-                width="966"
-                height="543"
-                src="https://www.youtube.com/embed/3XNbAbhQZFA"
-                title="I tried Swedish Death Cleaning (and it worked!)"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
             </div>
           </Carousel>

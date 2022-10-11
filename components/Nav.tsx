@@ -1,19 +1,21 @@
 import React from "react";
-import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
-import { HoverDropDown } from "./HoverDropDown";
+import styles from "../styles/Nav.module.css";
+
+import { DropDown } from "./DropDown";
 
 export const Nav = () => {
   return (
     <nav className={styles.nav}>
-      <p className={styles.title}>
-        <a href="/">
+      <Link href="/">
+        <p className={styles.title}>
           Margareta <br /> Magnusson
-        </a>
-      </p>
+        </p>
+      </Link>
       <ul>
         <li>
-          <HoverDropDown />
+          <DropDown />
         </li>
         <li>
           <a>Press</a>

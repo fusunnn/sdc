@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
 
-import styles from "../styles/ArtAging.module.css";
+import styles from "../../styles/books/ArtAging.module.css";
 
-import ArtOfAgingCover from "../public/assets/art-of-aging.png";
+import ArtOfAgingCover from "../../public/assets/covers/art-of-aging.png";
 
-import { Nav } from "../components/Nav";
+import { Nav } from "../../components/Nav";
 
 const ArtOfAging = () => {
   return (

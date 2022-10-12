@@ -174,22 +174,11 @@
 }
 
 .videos__section {
-  padding: 2rem 4rem;
+  padding: 4rem 4rem;
 }
 .videos__section__title {
   font-weight: bold;
   font-size: 1.8rem;
-}
-.carousel__element__container {
-  padding: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel__arrow {
-  margin-top: 25%;
-  cursor: pointer;
 }
 .video__container {
   display: flex;

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import styles from "../styles/Nav.module.css";
+import styles from "../styles/components/Nav.module.css";
 
 import { DropDown } from "./DropDown";
 

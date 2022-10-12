@@ -1,0 +1,66 @@
+.container {
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+.main__section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem 4rem;
+}
+.cover__container {
+  width: 20rem;
+}
+
+.buylinks__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 25rem;
+}
+.buylinks__label {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.logo__container {
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.uk__cover__container {
+  width: 15rem;
+  cursor: pointer;
+}
+
+.uk__info__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.uk__info {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.praise__section {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4rem;
+}
+
+.praise__title {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.quotes__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -6,51 +6,17 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 import Stripes from "../public/assets/hp-pt-stripes.png";
-import Walk from "../public/assets/dleh.png";
-import TeaCups from "../public/assets/tea-cups.png";
-import DeathCleaningCover from "../public/assets/death-cleaning.png";
-import ArtOfAgingCover from "../public/assets/art-of-aging.png";
+import Walk from "../public/assets/sketches/dleh.png";
+import TeaCups from "../public/assets/sketches/tea-cups.png";
+import DeathCleaningCover from "../public/assets/covers/death-cleaning.png";
+import ArtOfAgingCover from "../public/assets/covers/art-of-aging.png";
 
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-
-import { CgChevronRight, CgChevronLeft } from "react-icons/cg";
+import { CgChevronRight } from "react-icons/cg";
 
 import { Nav } from "../components/Nav";
+import { Footer } from "../components/Footer";
 
 const Home: NextPage = () => {
-  const redirect = (url: string) => {
-    window.open(url, "_blank");
-  };
-
-  const renderArrow = (type: any, onClick: () => any) => {
-    if (type === "PREV") {
-      return (
-        <CgChevronLeft
-          size={32}
-          onClick={onClick}
-          className={styles.carousel__arrow}
-        />
-      );
-    } else {
-      return (
-        <CgChevronRight
-          size={32}
-          onClick={onClick}
-          className={styles.carousel__arrow}
-        />
-      );
-    }
-  };
-
-  const items = [
-    { id: 1, title: "item #1" },
-    { id: 2, title: "item #2" },
-    { id: 3, title: "item #3" },
-    { id: 4, title: "item #4" },
-    { id: 5, title: "item #5" },
-  ];
-
   return (
     <div className={styles.container}>
       <Head>
@@ -185,6 +151,7 @@ const Home: NextPage = () => {
           {/* </Carousel> */}
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

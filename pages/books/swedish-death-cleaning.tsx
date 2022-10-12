@@ -13,6 +13,7 @@ import BookshopBL from "../../public/assets/buy-logos/bookshop-bl.png";
 import SimonSchusterBL from "../../public/assets/buy-logos/simonschuster-bl.png";
 import AppleBL from "../../public/assets/buy-logos/apple-bl.svg";
 import { Quote } from "../../components/Quote";
+import { Footer } from "../../components/Footer";
 
 interface quote {
   quote: string;
@@ -232,11 +233,14 @@ const SwedishDeathCleaning = () => {
       <section className={styles.praise__section}>
         <p className={styles.praise__title}>Praise</p>
         <div className={styles.quotes__container}>
-          {quotes.map((quote) => {
-            return <Quote quote={quote.quote} source={quote.source} />;
+          {quotes.map((quote, index) => {
+            return (
+              <Quote quote={quote.quote} source={quote.source} key={index} />
+            );
           })}
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

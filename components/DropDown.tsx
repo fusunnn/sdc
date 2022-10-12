@@ -14,17 +14,17 @@ export const DropDown = () => {
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
-        <Link href="/swedish-death-cleaning">
+        <Link href="/books/swedish-death-cleaning">
           <Dropdown.Item
-            href="/swedish-death-cleaning"
+            href="/books/swedish-death-cleaning"
             style={{ fontWeight: 500 }}
           >
             The Gentle Art of Swedish Death Cleaning
           </Dropdown.Item>
         </Link>
 
-        <Link href="/art-of-aging">
-          <Dropdown.Item href="/art-of-aging" style={{ fontWeight: 500 }}>
+        <Link href="/books/art-of-aging">
+          <Dropdown.Item href="/books/art-of-aging" style={{ fontWeight: 500 }}>
             The Swedish Art of Aging Exhuberantly
           </Dropdown.Item>
         </Link>

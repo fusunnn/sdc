@@ -75,13 +75,13 @@ const Home: NextPage = () => {
                   home in order while reflecting on the tiny joys that make up a
                   long life.
                 </p>
-                <Link href="/swedish-death-cleaning">
+                <Link href="/books/swedish-death-cleaning">
                   <div className={styles.death__cleaning__more__button}>
                     Learn More <CgChevronRight />{" "}
                   </div>
                 </Link>
               </div>
-              <Link href="/swedish-death-cleaning">
+              <Link href="/books/swedish-death-cleaning">
                 <div className={styles.book__cover__container}>
                   <Image
                     className={styles.book__cover}
@@ -99,14 +99,14 @@ const Home: NextPage = () => {
                   A book of humorous and charming advice for embracing life and
                   aging joyfully.
                 </p>
-                <Link href="/art-of-aging">
+                <Link href="/books/art-of-aging">
                   <div className={styles.art__aging__more__button}>
                     Learn More <CgChevronRight />{" "}
                   </div>
                 </Link>
               </div>
 
-              <Link href="/art-of-aging">
+              <Link href="/books/art-of-aging">
                 <div className={styles.book__cover__container}>
                   <Image
                     className={styles.book__cover}

@@ -20,6 +20,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 4rem;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .nav > ul {

@@ -1,13 +1,16 @@
 .container {
   background-color: var(--bg);
-  min-height: 100vh;
 }
 
 .main__section {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   padding: 2rem 4rem;
+}
+
+.main__section__content {
 }
 .cover__container {
   width: 20rem;

@@ -1,8 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styles from "../../styles/books/DeathCleaning.module.css";
-
-import { Nav } from "../../components/Nav";
+import styles from "../../styles/books/BookPage.module.css";
 
 import DeathCleaningCover from "../../public/assets/covers/death-cleaning.png";
 import UKCover from "../../public/assets/covers/sdc-uk-cover.jpg";
@@ -13,7 +11,6 @@ import BookshopBL from "../../public/assets/buy-logos/bookshop-bl.png";
 import SimonSchusterBL from "../../public/assets/buy-logos/simonschuster-bl.png";
 import AppleBL from "../../public/assets/buy-logos/apple-bl.svg";
 import { Quote } from "../../components/Quote";
-import { Footer } from "../../components/Footer";
 
 interface quote {
   quote: string;
@@ -25,6 +22,20 @@ const SwedishDeathCleaning = () => {
     window.open(url, "_blank");
     return;
   };
+
+  const AMAZON_URL =
+    "https://www.amazon.com/Gentle-Art-Swedish-Death-Cleaning/dp/1501173243";
+  const BARNESNOBLE_URL =
+    "https://www.barnesandnoble.com/w/the-gentle-art-of-swedish-death-cleaning-margareta-magnusson/1126697434?ean=9781501173240";
+  const BOOKSHOP_URL =
+    "https://bookshop.org/books/the-gentle-art-of-swedish-death-cleaning-how-to-free-yourself-and-your-family-from-a-lifetime-of-clutter/9781501173240";
+  const SIMONSCHUSTER_URL =
+    "https://www.simonandschuster.com/books/The-Gentle-Art-of-Swedish-Death-Cleaning/Margareta-Magnusson/9781501173240";
+  const APPLEBOOKS_URL =
+    "https://books.apple.com/us/book/the-gentle-art-of-swedish-death-cleaning/id1273757668";
+
+  const CANONGATE_URL =
+    "https://canongate.co.uk/books/3192-dostadning-the-gentle-art-of-swedish-death-cleaning/";
 
   const quotes: quote[] = [
     {
@@ -149,60 +160,39 @@ const SwedishDeathCleaning = () => {
 
   return (
     <div className={styles.container}>
-      <Nav />
       <section className={styles.main__section}>
         <div className={styles.buylinks__container}>
           <div
             className={styles.logo__container}
-            onClick={() =>
-              redirect(
-                "https://www.amazon.com/Gentle-Art-Swedish-Death-Cleaning/dp/1501173243"
-              )
-            }
+            onClick={() => redirect(AMAZON_URL)}
           >
             <Image src={AmazonBL} alt="amazon-logo" />
           </div>
 
           <div
             className={styles.logo__container}
-            onClick={() =>
-              redirect(
-                "https://www.barnesandnoble.com/w/the-gentle-art-of-swedish-death-cleaning-margareta-magnusson/1126697434?ean=9781501173240"
-              )
-            }
+            onClick={() => redirect(BARNESNOBLE_URL)}
           >
             <Image src={BarnesNobleBL} alt="barnesnoble-logo" />
           </div>
 
           <div
             className={styles.logo__container}
-            onClick={() =>
-              redirect(
-                "https://bookshop.org/books/the-gentle-art-of-swedish-death-cleaning-how-to-free-yourself-and-your-family-from-a-lifetime-of-clutter/9781501173240"
-              )
-            }
+            onClick={() => redirect(BOOKSHOP_URL)}
           >
             <Image src={BookshopBL} alt="bookshop-logo" />
           </div>
 
           <div
             className={styles.logo__container}
-            onClick={() =>
-              redirect(
-                "https://www.simonandschuster.com/books/The-Gentle-Art-of-Swedish-Death-Cleaning/Margareta-Magnusson/9781501173240"
-              )
-            }
+            onClick={() => redirect(SIMONSCHUSTER_URL)}
           >
             <Image src={SimonSchusterBL} alt="simonschuster-logo" />
           </div>
 
           <div
             className={styles.logo__container}
-            onClick={() =>
-              redirect(
-                "https://books.apple.com/us/book/the-gentle-art-of-swedish-death-cleaning/id1273757668"
-              )
-            }
+            onClick={() => redirect(APPLEBOOKS_URL)}
           >
             <Image src={AppleBL} alt="applebooks-logo" />
           </div>
@@ -220,11 +210,7 @@ const SwedishDeathCleaning = () => {
           <p className={styles.uk__info}>UK Edition From Canongate:</p>
           <div
             className={styles.uk__cover__container}
-            onClick={() =>
-              redirect(
-                "https://canongate.co.uk/books/3192-dostadning-the-gentle-art-of-swedish-death-cleaning/"
-              )
-            }
+            onClick={() => redirect(CANONGATE_URL)}
           >
             <Image src={UKCover} alt="sdc-uk-cover" />
           </div>
@@ -240,7 +226,6 @@ const SwedishDeathCleaning = () => {
           })}
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

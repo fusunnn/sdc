@@ -8,7 +8,7 @@ export const DropDown = () => {
     <Dropdown>
       <Dropdown.Toggle
         variant="white"
-        style={{ fontSize: "1.2rem", fontWeight: 500 }}
+        style={{ fontSize: "1.2rem", fontWeight: 500, color: "black" }}
       >
         Books
       </Dropdown.Toggle>

@@ -9,17 +9,17 @@ export const Nav = () => {
   return (
     <nav className={styles.nav}>
       <Link href="/">
-        <p className={styles.title}>
-          Margareta <br /> Magnusson
-        </p>
+        <p className={styles.title}>Margareta Magnusson</p>
       </Link>
       <ul>
         <li>
           <DropDown />
         </li>
-        <li>
-          <a>Press</a>
-        </li>
+        <Link href="/press">
+          <li>
+            <a>Press</a>
+          </li>
+        </Link>
         <li>
           <a>TV and Social Media</a>
         </li>

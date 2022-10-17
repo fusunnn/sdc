@@ -9,6 +9,8 @@
   color: var(--main);
   transition: 0.2s;
   cursor: pointer;
+  width: 5rem;
+  line-height: 2.25rem;
 }
 
 .title:hover {
@@ -19,11 +21,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 4rem;
-  position: absolute;
+  padding: 0rem 4rem;
   width: 100%;
-  top: 0;
-  left: 0;
+  height: 8rem;
+  background-color: var(--bg);
 }
 
 .nav > ul {
@@ -35,7 +36,7 @@
 .nav > ul > li {
   display: inline-block;
   color: #000;
-  padding-right: 2rem;
+  margin-left: 2rem;
   font-weight: 500;
   font-size: 1.2rem;
 }
@@ -45,8 +46,24 @@
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  display: inline-block;
+  position: relative;
 }
 
-.nav > ul > li > a:hover {
-  border-bottom: 0.2rem solid var(--accent);
+.nav > ul > li > a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2.5px;
+  bottom: -0.5px;
+  left: 0;
+  background-color: var(--accent);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav > ul > li > a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

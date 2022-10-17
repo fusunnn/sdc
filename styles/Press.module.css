@@ -1,0 +1,10 @@
+.container {
+  padding: 0rem 2rem 4rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collage__container {
+  width: 60%;
+}

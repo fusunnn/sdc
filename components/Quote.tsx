@@ -9,8 +9,10 @@ interface Props {
 export const Quote = (props: Props) => {
   return (
     <div className={styles.container}>
-      <p className={styles.quote}>&lsquo;{props.quote}&rsquo;</p>
-      <p className={styles.source}>{"- " + props.source}</p>
+      <p className={styles.quote}>
+        &lsquo;{props.quote}&rsquo; <br />
+        <span className={styles.source}>{"- " + props.source}</span>
+      </p>
     </div>
   );
 };

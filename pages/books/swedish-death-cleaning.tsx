@@ -41,7 +41,7 @@ const SwedishDeathCleaning = () => {
     {
       quote:
         "A fond and wise little book....I jettison advice books after I’ve flipped through them. This oneI will keep.",
-      source: "Dwight Garner,The New York Times",
+      source: "Dwight Garner, The New York Times",
     },
     {
       quote:
@@ -161,6 +161,47 @@ const SwedishDeathCleaning = () => {
   return (
     <div className={styles.container}>
       <section className={styles.main__section}>
+        {/* <div className={styles.main__content}> */}
+        <div className={styles.cover__container}>
+          <Image
+            src={DeathCleaningCover}
+            placeholder="blur"
+            alt="3d-cover-sdc"
+          />
+        </div>
+        <div className={styles.book__info}>
+          <p className={styles.title}>
+            The Gentle Art of Swedish Death Cleaning
+          </p>
+          <p className={styles.subtitle}>
+            A New York Times Bestseller <br />
+            Published in 30 Territories
+            <br />
+            Soon to be a major 8 - episode series on Peacock produced by Scout
+            Productions (Queer Eye) and Amy Poehler’s Paper Kite Productions
+            (Making It , Russian Doll)
+          </p>
+          <p className={styles.description}>
+            In Sweden there is a kind of decluttering called döstädning, dö
+            meaning “death” and städning meaning “cleaning.” This surprising and
+            invigorating process of clearing out unnecessary belongings can be
+            undertaken at any age or life stage but should be done sooner than
+            later, before others have to do it for you. In The Gentle Art of
+            Swedish Death Cleaning , artist Margareta Magnusson, with
+            Scandinavian humor and wisdom, instructs readers to embrace
+            minimalism. Her radical and joyous method for putting things in
+            order helps families broach sensitive conversations, and makes the
+            process uplifting rather than overwhelming. Margareta suggests which
+            possessions you can easily get rid of (unworn clothes, unwanted
+            presents, more plates than you’d ever use) and which you might want
+            to keep (photographs, love letters, a few of your children’s art
+            projects). Digging into her late husband’s tool shed, and her own
+            secret drawer of vices, Margareta introduces an element of fun to a
+            potentially daunting task. Along the way readers get a glimpse into
+            her life in Sweden, and also become more comfortable with the idea
+            of letting go.
+          </p>
+        </div>
         <div className={styles.buylinks__container}>
           <div
             className={styles.logo__container}
@@ -198,23 +239,16 @@ const SwedishDeathCleaning = () => {
           </div>
         </div>
 
-        <div className={styles.cover__container}>
-          <Image
-            src={DeathCleaningCover}
-            placeholder="blur"
-            alt="3d-cover-sdc"
-          />
-        </div>
-
-        <div className={styles.uk__info__container}>
-          <p className={styles.uk__info}>UK Edition From Canongate:</p>
-          <div
-            className={styles.uk__cover__container}
-            onClick={() => redirect(CANONGATE_URL)}
-          >
-            <Image src={UKCover} alt="sdc-uk-cover" />
-          </div>
-        </div>
+        {/* <div className={styles.uk__info__container}>
+            <p className={styles.uk__info}>UK Edition From Canongate:</p>
+            <div
+              className={styles.uk__cover__container}
+              onClick={() => redirect(CANONGATE_URL)}
+            >
+              <Image src={UKCover} alt="sdc-uk-cover" />
+            </div>
+          </div> */}
+        {/* </div> */}
       </section>
       <section className={styles.praise__section}>
         <p className={styles.praise__title}>Praise</p>

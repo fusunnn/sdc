@@ -33,17 +33,20 @@ const Home: NextPage = () => {
               <Image src={Walk} alt="walk-sketch" />
             </div>
             <p className={styles.bio}>
-              <span className={styles.bioSpanName}> Margareta Magnusson</span>{" "}
+              <span className={styles.bio__span__name}>
+                {" "}
+                Margareta Magnusson
+              </span>{" "}
               is, in her own words, aged between 80 and 100. Born in Sweden, she
               has lived all over the world. Margareta graduated from Beckman’s
               College of Design and her art has been exhibited in galleries from
               Hong Kong to Singapore. She has five children and lives in
               Stockholm. She is the author of{" "}
-              <span className={styles.bioSpanBT1}>
+              <span className={styles.bio__span__title__1}>
                 The Gentle Art of Swedish Death Cleaning
               </span>{" "}
               and{" "}
-              <span className={styles.bioSpanBT2}>
+              <span className={styles.bio__span__title__2}>
                 The Swedish Art of Aging Exuberantly
               </span>
               .
@@ -75,6 +78,7 @@ const Home: NextPage = () => {
                   home in order while reflecting on the tiny joys that make up a
                   long life.
                 </p>
+
                 <Link href="/books/swedish-death-cleaning">
                   <div className={styles.death__cleaning__more__button}>
                     Learn More <CgChevronRight />{" "}

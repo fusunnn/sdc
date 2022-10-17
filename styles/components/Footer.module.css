@@ -2,9 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
-  background-color: #e9e9e9;
+  padding: 4rem;
+  background-color: #fbc524;
   font-weight: 500;
+  width: 100%;
 }
 
 .social__media__icons__container {

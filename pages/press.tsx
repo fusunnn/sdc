@@ -6,13 +6,13 @@ import styles from "../styles/Press.module.css";
 
 import BBC from "../public/assets/collage/bbc.png";
 import Buzzfeed from "../public/assets/collage/buzzfeed.png";
-import Dagens from "../public/assets/collage/dagens.jpg";
-import EW from "../public/assets/collage/ew-roundup.jpg";
+import Dagens from "../public/assets/collage/dagens.png";
+import EW from "../public/assets/collage/ew-roundup.png";
 import Frankfurter from "../public/assets/collage/frankfurter.png";
-import Fru from "../public/assets/collage/fru.jpg";
+import Fru from "../public/assets/collage/fru.png";
 import Hygge from "../public/assets/collage/hygge.png";
 import Japan from "../public/assets/collage/japan.png";
-import NYT from "../public/assets/collage/nyt.jpg";
+import NYT from "../public/assets/collage/nyt.png";
 import Pause from "../public/assets/collage/pause.png";
 import People from "../public/assets/collage/people.png";
 import Tina from "../public/assets/collage/tina.png";

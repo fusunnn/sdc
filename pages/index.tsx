@@ -34,137 +34,131 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <section className={styles.home}>
-          <div className={styles.home__left} data-aos="fade-right">
-            <div className={styles.people__walking__sketch__container}>
-              <Image src={Walk} alt="people-walking-sketch" />
-            </div>
-            <p className={styles.bio}>
-              <span className={styles.bio__span__name}>
-                {" "}
-                Margareta Magnusson
-              </span>{" "}
-              is, in her own words, aged between 80 and 100. Born in Sweden, she
-              has lived all over the world. Margareta graduated from Beckman’s
-              College of Design and her art has been exhibited in galleries from
-              Hong Kong to Singapore. She has five children and lives in
-              Stockholm. She is the author of{" "}
-              <span
-                className={styles.bio__span__title__1}
-                onClick={handleScrollClick}
-              >
-                The Gentle Art of Swedish Death Cleaning
-              </span>{" "}
-              and{" "}
-              <span
-                className={styles.bio__span__title__2}
-                onClick={handleScrollClick}
-              >
-                The Swedish Art of Aging Exuberantly
-              </span>
-              .
-            </p>
-            <div className={styles.home__left__bot__container}>
-              <div className={styles.arrow__container}>
-                <div className={styles.styled__arrow} />
-              </div>
-              <div className={styles.teacups__sketch__container}>
-                <Image src={TeaCups} alt="teacups-sketch" />
-              </div>
-              <div className={styles.arrow__container}>
-                <div className={styles.styled__arrow} />
-              </div>
-            </div>
+      <section className={styles.home__section}>
+        <div className={styles.home__left} data-aos="fade-right">
+          <div className={styles.people__walking__sketch__container}>
+            <Image src={Walk} alt="people-walking-sketch" />
           </div>
-          <div className={styles.crabs__sketch__container}>
-            <Image src={Crabs} alt="crabs-sketch" />
-          </div>
-          <div className={styles.mm__portrait__container} data-aos="fade-left">
-            <Image
-              placeholder="blur"
-              src={Stripes}
-              alt="margareta-portrait"
-              priority
-            />
-          </div>
-        </section>
-
-        <section className={styles.books__section} ref={booksSectionRef}>
-          <p className={styles.books__section__title}>Books</p>
-          <div className={styles.book__cover__section}>
-            <div
-              className={styles.death__cleaning__section}
-              data-aos="fade-right"
+          <p className={styles.bio}>
+            <span className={styles.bio__span__name}> Margareta Magnusson</span>{" "}
+            is, in her own words, aged between 80 and 100. Born in Sweden, she
+            has lived all over the world. Margareta graduated from Beckman’s
+            College of Design and her art has been exhibited in galleries from
+            Hong Kong to Singapore. She has five children and lives in
+            Stockholm. She is the author of{" "}
+            <span
+              className={styles.bio__span__title__1}
+              onClick={handleScrollClick}
             >
-              <div className={styles.death__cleaning__bio}>
-                <p className={styles.death__cleaning__bio__text}>
-                  A charming, practical, and unsentimental approach to putting a
-                  home in order while reflecting on the tiny joys that make up a
-                  long life.
-                </p>
+              The Gentle Art of Swedish Death Cleaning
+            </span>{" "}
+            and{" "}
+            <span
+              className={styles.bio__span__title__2}
+              onClick={handleScrollClick}
+            >
+              The Swedish Art of Aging Exuberantly
+            </span>
+            .
+          </p>
+          <div className={styles.home__left__bot__container}>
+            <div className={styles.arrow__container}>
+              <div className={styles.styled__arrow} />
+            </div>
+            <div className={styles.teacups__sketch__container}>
+              <Image src={TeaCups} alt="teacups-sketch" />
+            </div>
+            <div className={styles.arrow__container}>
+              <div className={styles.styled__arrow} />
+            </div>
+          </div>
+        </div>
+        <div className={styles.crabs__sketch__container}>
+          <Image src={Crabs} alt="crabs-sketch" />
+        </div>
+        <div className={styles.mm__portrait__container} data-aos="fade-left">
+          <Image
+            placeholder="blur"
+            src={Stripes}
+            alt="margareta-portrait"
+            objectFit="cover"
+            layout="responsive"
+            priority
+          />
+        </div>
+      </section>
 
-                <Link href="/books/swedish-death-cleaning">
-                  <div className={styles.death__cleaning__more__button}>
-                    Learn More <CgChevronRight />{" "}
-                  </div>
-                </Link>
-              </div>
+      <section className={styles.books__section} ref={booksSectionRef}>
+        <p className={styles.books__section__title}>Books</p>
+        <div className={styles.book__cover__section}>
+          <div className={styles.book__section} data-aos="fade-right">
+            <div className={styles.book__bio}>
+              <p className={styles.book__bio__text}>
+                A charming, practical, and unsentimental approach to putting a
+                home in order while reflecting on the tiny joys that make up a
+                long life.
+              </p>
+
               <Link href="/books/swedish-death-cleaning">
-                <div className={styles.book__cover__container}>
-                  <Image
-                    className={styles.book__cover}
-                    placeholder="blur"
-                    src={DeathCleaningCover}
-                    alt="3d-cover-sdc"
-                  />
+                <div className={styles.death__cleaning__more__button}>
+                  Learn More <CgChevronRight />{" "}
                 </div>
               </Link>
             </div>
-
-            <div className={styles.art__aging__section} data-aos="fade-left">
-              <div className={styles.art__aging__bio}>
-                <p className={styles.art__aging__bio__text}>
-                  A book of humorous and charming advice for embracing life and
-                  aging joyfully.
-                </p>
-                <Link href="/books/art-of-aging">
-                  <div className={styles.art__aging__more__button}>
-                    Learn More <CgChevronRight />{" "}
-                  </div>
-                </Link>
+            <Link href="/books/swedish-death-cleaning">
+              <div className={styles.book__cover__container}>
+                <Image
+                  className={styles.book__cover}
+                  placeholder="blur"
+                  src={DeathCleaningCover}
+                  alt="3d-cover-sdc"
+                />
               </div>
+            </Link>
+          </div>
 
+          <div className={styles.book__section} data-aos="fade-left">
+            <div className={styles.book__bio}>
+              <p className={styles.book__bio__text}>
+                A book of humorous and charming advice for embracing life and
+                aging joyfully.
+              </p>
               <Link href="/books/art-of-aging">
-                <div className={styles.book__cover__container}>
-                  <Image
-                    className={styles.book__cover}
-                    placeholder="blur"
-                    src={ArtOfAgingCover}
-                    alt="3d-cover-aging"
-                  />
+                <div className={styles.art__aging__more__button}>
+                  Learn More <CgChevronRight />{" "}
                 </div>
               </Link>
             </div>
-          </div>
-        </section>
 
-        <section className={styles.videos__section}>
-          <p className={styles.videos__section__title}>Videos</p>
-
-          <div className={styles.video__container}>
-            <iframe
-              width="950"
-              height="534"
-              src="https://www.youtube.com/embed/yv6fBOZlMgE"
-              title="The Gentle Art of Swedish Death Cleaning"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            <Link href="/books/art-of-aging">
+              <div className={styles.book__cover__container}>
+                <Image
+                  className={styles.book__cover}
+                  placeholder="blur"
+                  src={ArtOfAgingCover}
+                  alt="3d-cover-aging"
+                />
+              </div>
+            </Link>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
+      <section className={styles.videos__section}>
+        <p className={styles.videos__section__title}>Videos</p>
+
+        <div className={styles.video__container}>
+          <iframe
+            width="950"
+            height="534"
+            src="https://www.youtube.com/embed/yv6fBOZlMgE"
+            title="The Gentle Art of Swedish Death Cleaning"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </section>
     </div>
   );
 };

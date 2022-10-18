@@ -6,26 +6,23 @@ import { CgChevronDown } from "react-icons/cg";
 
 interface Props {
   label: string;
-  labelHref?: string;
   children?: React.ReactNode;
+  width?: string;
 }
 
-export const DropDown = ({ label, children, labelHref }: Props) => {
+export const DropDown = ({ children, label, width }: Props) => {
   return (
     <div className={styles.dropdown__container}>
-      {labelHref ? (
-        <Link href={labelHref}>
-          <div className={styles.dropdown__button__clickable}>
-            {label} <CgChevronDown />
-          </div>
-        </Link>
-      ) : (
-        <div className={styles.dropdown__button}>
-          {label} <CgChevronDown />
-        </div>
-      )}
+      <div className={styles.dropdown__button}>
+        {label} <CgChevronDown />
+      </div>
 
-      <div className={styles.dropdown__content}>{children}</div>
+      <div
+        className={styles.dropdown__content}
+        style={{ width: width ? width : "20rem" }}
+      >
+        {children}
+      </div>
     </div>
   );
 };

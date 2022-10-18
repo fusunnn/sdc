@@ -27,44 +27,44 @@ const Press = () => {
       <p className={styles.title}>International Press</p>
       <div className={styles.grid__container}>
         <div className={styles.bbc__container}>
-          <Image src={BBC} />
+          <Image src={BBC} alt="bbc" />
         </div>
         <div className={styles.bbc__container}>
-          <Image src={Buzzfeed} />
+          <Image src={Buzzfeed} alt="buzzfeed" />
         </div>
         <div className={styles.dagens__container}>
-          <Image src={Dagens} />
+          <Image src={Dagens} alt="dagens" />
         </div>
         <div className={styles.ew__container}>
-          <Image src={EW} />
+          <Image src={EW} alt="ew-roundups" />
         </div>
         <div className={styles.frankfurter__container}>
-          <Image src={Frankfurter} />
+          <Image src={Frankfurter} alt="frankfurter" />
         </div>
         <div className={styles.fru__container}>
-          <Image src={Fru} />
+          <Image src={Fru} alt="fru" />
         </div>
         <div className={styles.hygge__container}>
-          <Image src={Hygge} />
+          <Image src={Hygge} alt="hygge" />
         </div>
         <div className={styles.japan__container}>
-          <Image src={Japan} />
+          <Image src={Japan} alt="japan" />
         </div>
         <div className={styles.nyt__container}>
-          <Image src={NYT} />
+          <Image src={NYT} alt="nyt" />
         </div>
         <div className={styles.pause__container}>
-          <Image src={Pause} />
+          <Image src={Pause} alt="pause" />
         </div>
         <div className={styles.people__container}>
-          <Image src={People} />
+          <Image src={People} alt="people" />
         </div>
         <div className={styles.tina__container}>
-          <Image src={Tina} />
+          <Image src={Tina} alt="tina" />
         </div>
 
         <div className={styles.wired__container}>
-          <Image src={Wired} />
+          <Image src={Wired} alt="wired" />
         </div>
       </div>
     </div>

@@ -57,6 +57,16 @@ export const Footer = () => {
               Facebook
             </a>
           </p>
+          <p className={styles.link__element}>
+            <a
+              className={styles.link}
+              href="https://www.goodreads.com/author/show/16917867.Margareta_Magnusson"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Goodreads
+            </a>
+          </p>
         </div>
         <div className={styles.link__container}>
           <p className={styles.link__title}>Contact</p>

@@ -3,7 +3,7 @@ import Quote from "../../../types/Quote";
 export const quotes: Quote[] = [
   {
     quote:
-      "A fond and wise little book....I jettison advice books after I’ve flipped through them. This oneI will keep.",
+      "A fond and wise little book....I jettison advice books after I’ve flipped through them. This one I will keep.",
     source: "Dwight Garner, The New York Times",
   },
   {

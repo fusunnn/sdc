@@ -52,7 +52,7 @@ const TvSM = () => {
             className={styles.headline__container}
             onClick={() =>
               redirect(
-                "https://deadline.com/2022/04/amy-poehler-the-gentle-art-of-swedish-death-cleaning-peacock-1234996342/"
+                "https://www.nytimes.com/2022/04/09/opinion/letters/death-cleaning-clutter.html"
               )
             }
           >

@@ -44,14 +44,16 @@
   font-weight: bold;
   color: var(--main);
 }
-
-.bio__span__title__1 {
+.bio__span__title__1,
+.bio__span__title__2 {
   font-weight: bold;
+  cursor: pointer;
+}
+.bio__span__title__1 {
   color: var(--accent);
 }
 
 .bio__span__title__2 {
-  font-weight: bold;
   color: var(--aging-color);
 }
 

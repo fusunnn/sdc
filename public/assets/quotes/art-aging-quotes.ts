@@ -5,7 +5,7 @@ export const quotes: Quote[] = [
     quote:
       "A warm, accessible guide to ageing with grace and art (and chocolate). I loved it.",
     source:
-      "Matt Haig, Author of the International Best Seller 'Reasons to Stay Alive'",
+      "Matt Haig, Author of the International Best Seller Reasons to Stay Alive",
   },
 
   {

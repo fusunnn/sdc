@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -15,6 +16,12 @@ import ArtOfAgingCover from "../public/assets/covers/art-aging/3dcover.png";
 import { CgChevronRight } from "react-icons/cg";
 
 const Home: NextPage = () => {
+  const booksSectionRef = useRef<null | HTMLDivElement>(null);
+
+  const handleScrollClick = () => {
+    booksSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -43,11 +50,17 @@ const Home: NextPage = () => {
               College of Design and her art has been exhibited in galleries from
               Hong Kong to Singapore. She has five children and lives in
               Stockholm. She is the author of{" "}
-              <span className={styles.bio__span__title__1}>
+              <span
+                className={styles.bio__span__title__1}
+                onClick={handleScrollClick}
+              >
                 The Gentle Art of Swedish Death Cleaning
               </span>{" "}
               and{" "}
-              <span className={styles.bio__span__title__2}>
+              <span
+                className={styles.bio__span__title__2}
+                onClick={handleScrollClick}
+              >
                 The Swedish Art of Aging Exuberantly
               </span>
               .
@@ -77,7 +90,7 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        <section className={styles.books__section}>
+        <section className={styles.books__section} ref={booksSectionRef}>
           <p className={styles.books__section__title}>Books</p>
           <div className={styles.book__cover__section}>
             <div

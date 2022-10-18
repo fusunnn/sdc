@@ -5,9 +5,9 @@ import useEmblaCarousel from "embla-carousel-react";
 
 import { CgChevronRight, CgChevronLeft } from "react-icons/cg";
 
-type Props = {
+interface Props {
   children?: React.ReactNode;
-};
+}
 export const Carousel = ({ children }: Props) => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
 

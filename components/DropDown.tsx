@@ -1,34 +1,31 @@
 import React from "react";
 import Link from "next/link";
+import styles from "../styles/components/Dropdown.module.css";
 
-import Dropdown from "react-bootstrap/Dropdown";
+import { CgChevronDown } from "react-icons/cg";
 
-export const DropDown = () => {
+interface Props {
+  label: string;
+  labelHref?: string;
+  children?: React.ReactNode;
+}
+
+export const DropDown = ({ label, children, labelHref }: Props) => {
   return (
-    <Dropdown>
-      <Dropdown.Toggle
-        variant="white"
-        style={{ fontSize: "1.2rem", fontWeight: 500, color: "black" }}
-      >
-        Books
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Link href="/books/swedish-death-cleaning">
-          <Dropdown.Item
-            href="/books/swedish-death-cleaning"
-            style={{ fontWeight: 500 }}
-          >
-            The Gentle Art of Swedish Death Cleaning
-          </Dropdown.Item>
+    <div className={styles.dropdown__container}>
+      {labelHref ? (
+        <Link href={labelHref}>
+          <div className={styles.dropdown__button__clickable}>
+            {label} <CgChevronDown />
+          </div>
         </Link>
+      ) : (
+        <div className={styles.dropdown__button}>
+          {label} <CgChevronDown />
+        </div>
+      )}
 
-        <Link href="/books/art-of-aging">
-          <Dropdown.Item href="/books/art-of-aging" style={{ fontWeight: 500 }}>
-            The Swedish Art of Aging Exhuberantly
-          </Dropdown.Item>
-        </Link>
-      </Dropdown.Menu>
-    </Dropdown>
+      <div className={styles.dropdown__content}>{children}</div>
+    </div>
   );
 };

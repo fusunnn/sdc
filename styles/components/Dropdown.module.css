@@ -1,0 +1,60 @@
+.dropdown__container {
+  position: relative;
+  display: inline-block;
+  z-index: 5;
+}
+
+.dropdown__content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 20rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown__button,
+.dropdown__button__clickable {
+  position: relative;
+  display: inline-block;
+}
+.dropdown__button::after,
+.dropdown__button__clickable::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2.5px;
+  bottom: -0.5px;
+  left: 0;
+  background-color: var(--accent);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.dropdown__element {
+  color: black;
+  padding: 1rem 1rem;
+  display: block;
+  font-size: 1rem;
+  font-family: "Hind Madurai", sans-serif;
+  cursor: pointer;
+}
+
+.dropdown__element:hover {
+  background-color: rgb(226, 225, 225);
+}
+
+.dropdown__container:hover > .dropdown__content {
+  display: block;
+}
+
+.dropdown__container:hover > .dropdown__button::after,
+.dropdown__container:hover > .dropdown__button__clickable::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.dropdown__button__clickable {
+  cursor: pointer;
+}

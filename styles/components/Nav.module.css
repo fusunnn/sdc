@@ -42,7 +42,6 @@
 }
 
 .nav > ul > li > a {
-  transition: 0.2s;
   cursor: pointer;
   text-decoration: none;
   color: inherit;

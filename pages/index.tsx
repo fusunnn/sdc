@@ -29,7 +29,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <section className={styles.home}>
-          <div className={styles.home__left}>
+          <div className={styles.home__left} data-aos="fade-right">
             <div className={styles.people__walking__sketch__container}>
               <Image src={Walk} alt="people-walking-sketch" />
             </div>
@@ -67,15 +67,23 @@ const Home: NextPage = () => {
           <div className={styles.crabs__sketch__container}>
             <Image src={Crabs} alt="crabs-sketch" />
           </div>
-          <div className={styles.mm__portrait__container}>
-            <Image placeholder="blur" src={Stripes} alt="margareta-portrait" />
+          <div className={styles.mm__portrait__container} data-aos="fade-left">
+            <Image
+              placeholder="blur"
+              src={Stripes}
+              alt="margareta-portrait"
+              priority
+            />
           </div>
         </section>
 
         <section className={styles.books__section}>
           <p className={styles.books__section__title}>Books</p>
           <div className={styles.book__cover__section}>
-            <div className={styles.death__cleaning__section}>
+            <div
+              className={styles.death__cleaning__section}
+              data-aos="fade-right"
+            >
               <div className={styles.death__cleaning__bio}>
                 <p className={styles.death__cleaning__bio__text}>
                   A charming, practical, and unsentimental approach to putting a
@@ -101,7 +109,7 @@ const Home: NextPage = () => {
               </Link>
             </div>
 
-            <div className={styles.art__aging__section}>
+            <div className={styles.art__aging__section} data-aos="fade-left">
               <div className={styles.art__aging__bio}>
                 <p className={styles.art__aging__bio__text}>
                   A book of humorous and charming advice for embracing life and

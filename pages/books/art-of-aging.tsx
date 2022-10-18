@@ -42,7 +42,7 @@ const ArtOfAging = () => {
         <title>The Swedish Art of Aging Exuberantly- Margareta Magnusson</title>
       </Head>
       <section className={styles.main__section}>
-        <div className={styles.cover__container}>
+        <div className={styles.cover__container} data-aos="fade-right">
           <Image
             src={ArtOfAgingCover}
             placeholder="blur"

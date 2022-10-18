@@ -8,7 +8,7 @@ const Error404 = () => {
         <p className={styles.error__number}>404</p>
         <div className={styles.line__divider} />
         <p className={styles.error__message}>
-          Looks like the page you're looking for doesn't exist.
+          Looks like the page you{"'"}re looking for doesn{"'"}t exist.
         </p>
       </div>
     </div>

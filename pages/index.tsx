@@ -7,6 +7,7 @@ import styles from "../styles/Home.module.css";
 
 import Stripes from "../public/assets/hp-pt-stripes.png";
 import Walk from "../public/assets/sketches/dleh.png";
+import Crabs from "../public/assets/sketches/crabs.png";
 import TeaCups from "../public/assets/sketches/tea-cups.png";
 import DeathCleaningCover from "../public/assets/covers/sdc/3dcover.png";
 import ArtOfAgingCover from "../public/assets/covers/art-aging/3dcover.png";
@@ -29,8 +30,8 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <section className={styles.home}>
           <div className={styles.home__left}>
-            <div className={styles.walk__container}>
-              <Image src={Walk} alt="walk-sketch" />
+            <div className={styles.people__walking__sketch__container}>
+              <Image src={Walk} alt="people-walking-sketch" />
             </div>
             <p className={styles.bio}>
               <span className={styles.bio__span__name}>
@@ -55,7 +56,7 @@ const Home: NextPage = () => {
               <div className={styles.arrow__container}>
                 <div className={styles.styled__arrow} />
               </div>
-              <div className={styles.teacups__container}>
+              <div className={styles.teacups__sketch__container}>
                 <Image src={TeaCups} alt="teacups-sketch" />
               </div>
               <div className={styles.arrow__container}>
@@ -63,7 +64,10 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className={styles.stripes__container}>
+          <div className={styles.crabs__sketch__container}>
+            <Image src={Crabs} alt="crabs-sketch" />
+          </div>
+          <div className={styles.mm__portrait__container}>
             <Image placeholder="blur" src={Stripes} alt="margareta-portrait" />
           </div>
         </section>

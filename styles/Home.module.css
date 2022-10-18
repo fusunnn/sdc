@@ -1,7 +1,7 @@
 .home {
   display: flex;
   padding: 2rem 4rem 6rem 4rem;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .home__left {
@@ -16,16 +16,20 @@
   justify-content: space-between;
 }
 
-.walk__container {
+.people__walking__sketch__container {
   width: 45%;
 }
 
-.stripes__container {
+.mm__portrait__container {
   width: 35rem;
 }
 
-.teacups__container {
+.teacups__sketch__container {
   width: 85%;
+}
+
+.crabs__sketch__container {
+  width: 14%;
 }
 
 .bio {

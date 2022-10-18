@@ -1,7 +1,3 @@
-.container {
-  background-color: var(--bg);
-}
-
 .home {
   display: flex;
   padding: 2rem 4rem 6rem 4rem;
@@ -13,7 +9,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background: #000; */
 }
 
 .home__left__bot__container {
@@ -38,7 +33,6 @@
   font-weight: 400;
   line-height: 2.25rem;
   font-family: "Hind Madurai", sans-serif;
-  color: black;
 }
 
 .bio__span__name {
@@ -159,7 +153,6 @@
   width: 9rem;
   height: 3rem;
   transition: 0.2s;
-  color: black;
   font-weight: 500;
 }
 
@@ -168,7 +161,7 @@
 }
 
 .art__aging__more__button {
-  border: 2px solid #ec5b44;
+  border: 2px solid var(--aging-color);
 }
 
 .death__cleaning__more__button:hover {

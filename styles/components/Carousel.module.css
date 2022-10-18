@@ -1,0 +1,29 @@
+.embla {
+  overflow: hidden;
+  height: 35rem;
+  margin-top: 2rem;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.embla__prev,
+.embla__next {
+  position: absolute;
+  cursor: pointer;
+  transform: translateY(-18rem);
+}
+
+.embla__prev {
+  left: 6rem;
+}
+
+.embla__next {
+  right: 6rem;
+}

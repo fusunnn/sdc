@@ -8,8 +8,8 @@ import styles from "../styles/Home.module.css";
 import Stripes from "../public/assets/hp-pt-stripes.png";
 import Walk from "../public/assets/sketches/dleh.png";
 import TeaCups from "../public/assets/sketches/tea-cups.png";
-import DeathCleaningCover from "../public/assets/covers/death-cleaning.png";
-import ArtOfAgingCover from "../public/assets/covers/art-of-aging.png";
+import DeathCleaningCover from "../public/assets/covers/sdc/3dcover.png";
+import ArtOfAgingCover from "../public/assets/covers/art-aging/3dcover.png";
 
 import { CgChevronRight } from "react-icons/cg";
 
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
         <title>Margareta Magnusson</title>
         <meta
           name="description"
-          content="Home page for the Margareta Magusson website."
+          content="Margareta Magusson official website."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />

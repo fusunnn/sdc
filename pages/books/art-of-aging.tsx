@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
+import Head from "next/head";
 
 import styles from "../../styles/books/BookPage.module.css";
 
-import ArtOfAgingCover from "../../public/assets/covers/art-of-aging.png";
-import UKCover from "../../public/assets/covers/art-aging-uk-cover.jpg";
+import ArtOfAgingCover from "../../public/assets/covers/art-aging/3dcover.png";
+import UKCover from "../../public/assets/covers/art-aging/international/uk.jpg";
 
 import AmazonBL from "../../public/assets/buy-logos/amazon-bl.png";
 import BarnesNobleBL from "../../public/assets/buy-logos/barnesnoble-bl.png";
@@ -13,49 +14,13 @@ import SimonSchusterBL from "../../public/assets/buy-logos/simonschuster-bl.png"
 import AppleBL from "../../public/assets/buy-logos/apple-bl.svg";
 
 import { Quote } from "../../components/Quote";
-
-interface quote {
-  quote: string;
-  source: string;
-}
+import { quotes } from "../../public/assets/quotes/art-aging-quotes";
 
 const ArtOfAging = () => {
   const redirect = (url: string) => {
     window.open(url, "_blank");
     return;
   };
-
-  const quotes: quote[] = [
-    {
-      quote:
-        "A warm, accessible guide to ageing with grace and art (and chocolate). I loved it.",
-      source:
-        "Matt Haig, Author of the International Best Seller 'Reasons to Stay Alive'",
-    },
-
-    {
-      quote:
-        "A thought-provoking guide for how to take life in with clear-eyed humor—whatever age we are. Definitely read this funny, very wise book before you die. Afterward, its availability may be severely limited.",
-      source:
-        "Daniel Klein, bestselling author of Travels with Epicurus: A Journey to a Greek Island in Search of a Fulfilled Life",
-    },
-    {
-      quote:
-        "Here is an 86-year old who refuses to slow down just because she must now use a walker.",
-      source: "Jönköpings-Posten (Sweden)",
-    },
-    { quote: "This Spring’s most hopeful book!", source: "M-Magasin (Sweden)" },
-    {
-      quote:
-        "She delivers insight, wisdom and good advice with humor, edge and warmth.",
-      source: "Amelia (Sweden)",
-    },
-    {
-      quote:
-        "More than anything, Magnusson’s new book is about cherishing your relationships and allowing yourself pleasure – until your last breath. A philosophy as good as any, and she writes in high spirits and with playfulness, which resolutely removes any danger of her coming across as prudent … Margareta Magnusson is someone who goes against the grain. And loves doing it. I find this comforting and inspiring, anticipating my own presumed old age.",
-      source: "Helsingborgs Dagblad (Sweden)",
-    },
-  ];
 
   const AMAZON_URL =
     "https://www.amazon.com/Swedish-Art-Aging-Well-Probably/dp/1982196629";
@@ -73,6 +38,9 @@ const ArtOfAging = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>The Swedish Art of Aging Exuberantly- Margareta Magnusson</title>
+      </Head>
       <section className={styles.main__section}>
         <div className={styles.cover__container}>
           <Image
@@ -81,8 +49,8 @@ const ArtOfAging = () => {
             alt="3d-cover-aging"
           />
         </div>
-        <div className={styles.book__info}>
-          <p className={styles.title__art__aging}>
+        <div className={styles.book__info__container}>
+          <p className={styles.book__title__art__aging}>
             The Swedish Art of Aging Exuberantly
           </p>
           <p className={styles.subtitle}>
@@ -114,15 +82,7 @@ const ArtOfAging = () => {
             every day.
           </p>
         </div>
-        {/* <div className={styles.uk__info__container}>
-          <p className={styles.uk__info}>UK Edition From Canongate:</p>
-          <div
-            className={styles.uk__cover__container}
-            onClick={() => redirect(CANONGATE_URL)}
-          >
-            <Image src={UKCover} alt="sdc-uk-cover" />
-          </div>
-        </div> */}
+
         <div className={styles.buylinks__container}>
           <div
             className={styles.logo__container}
@@ -160,8 +120,9 @@ const ArtOfAging = () => {
           </div>
         </div>
       </section>
+
       <section className={styles.praise__section}>
-        <p className={styles.praise__title}>Praise</p>
+        <p className={styles.title}>Praise</p>
         <div className={styles.quotes__container}>
           {quotes.map((quote, index) => {
             return (

@@ -20,9 +20,11 @@ export const Nav = () => {
             <a>Press</a>
           </li>
         </Link>
-        <li>
-          <a>TV and Social Media</a>
-        </li>
+        <Link href="/tv-sm">
+          <li>
+            <a>TV & Social Media</a>
+          </li>
+        </Link>
         <li>
           <a
             href="https://www.susannalea.com/contact/"

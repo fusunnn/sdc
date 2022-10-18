@@ -1,21 +1,37 @@
 import React from "react";
 import Image from "next/image";
+import Head from "next/head";
+
 import styles from "../../styles/books/BookPage.module.css";
 
-import DeathCleaningCover from "../../public/assets/covers/death-cleaning.png";
-import UKCover from "../../public/assets/covers/sdc-uk-cover.jpg";
+import DeathCleaningCover from "../../public/assets/covers/sdc/3dcover.png";
+import UK from "../../public/assets/covers/sdc/international/uk.jpg";
+import Aus from "../../public/assets/covers/sdc/international/aus.png";
+import Catalan from "../../public/assets/covers/sdc/international/catalan.png";
+import Chinese from "../../public/assets/covers/sdc/international/chinese.png";
+import Dutch from "../../public/assets/covers/sdc/international/dutch.png";
+import French from "../../public/assets/covers/sdc/international/french.jpg";
+import German from "../../public/assets/covers/sdc/international/german.png";
+import Hindi from "../../public/assets/covers/sdc/international/hindi.png";
+import Hungarian from "../../public/assets/covers/sdc/international/hungarian.png";
+import Japanese from "../../public/assets/covers/sdc/international/japanese.png";
+import NZ from "../../public/assets/covers/sdc/international/nz.png";
+import Polish from "../../public/assets/covers/sdc/international/polish.png";
+import Portuguese from "../../public/assets/covers/sdc/international/portuguese.png";
+import Russian from "../../public/assets/covers/sdc/international/russian.png";
+import Spanish from "../../public/assets/covers/sdc/international/spanish.png";
 
 import AmazonBL from "../../public/assets/buy-logos/amazon-bl.png";
 import BarnesNobleBL from "../../public/assets/buy-logos/barnesnoble-bl.png";
 import BookshopBL from "../../public/assets/buy-logos/bookshop-bl.png";
 import SimonSchusterBL from "../../public/assets/buy-logos/simonschuster-bl.png";
 import AppleBL from "../../public/assets/buy-logos/apple-bl.svg";
-import { Quote } from "../../components/Quote";
 
-interface quote {
-  quote: string;
-  source: string;
-}
+import { Quote } from "../../components/Quote";
+import { quotes } from "../../public/assets/quotes/sdc-quotes";
+
+import carousel__styles from "../../styles/components/Carousel.module.css";
+import Carousel from "../../components/Carousel";
 
 const SwedishDeathCleaning = () => {
   const redirect = (url: string) => {
@@ -37,131 +53,14 @@ const SwedishDeathCleaning = () => {
   const CANONGATE_URL =
     "https://canongate.co.uk/books/3192-dostadning-the-gentle-art-of-swedish-death-cleaning/";
 
-  const quotes: quote[] = [
-    {
-      quote:
-        "A fond and wise little book....I jettison advice books after I’ve flipped through them. This oneI will keep.",
-      source: "Dwight Garner, The New York Times",
-    },
-    {
-      quote:
-        "A slim yet sage volume. . . . While Marie Kondo gave us strict instructions to only keep things that spark joy, Magnusson’s book is straightforward and unsentimental (with a bit of humor). The main message from this mother of five is: Take responsibility for your items and don’t leave them as a burden for family and friends.",
-      source: "The Washington Post",
-    },
-    {
-      quote: "Witty, useful and oddly profound.",
-      source: "Entertainment Weekly",
-    },
-    {
-      quote:
-        "Proustian. . . . A primer on how to winnow your belongings before you die, so you don’t burden your family. . . . Ms. Magnusson is the anti-Kondo, who takes us on a charming and discursive tour of her own stuff.",
-      source: "Penelope Green, The New York Times",
-    },
-    {
-      quote:
-        "Magnusson shares solid guiding principles for organizing your home, no matter your age or life circumstance.",
-      source: "Business Insider",
-    },
-    {
-      quote:
-        "One of the most charming, funny, and motivating books I've read in some time.... Magnusson is an absolute delight. This book is so much more than lifestyle tips. It's full of life. Magnusson's candid humor and unassailable spirit comes through on each page... The best way to prepare for death is to live a good life, which Magnusson has done. We're lucky that she shares so much of it — in stories of gratitude, family, work, and love.",
-      source: "Buzzfeed",
-    },
-    {
-      quote:
-        "Magnusson uses a dry, unsentimental and sometimes dark Scandinavian sense of humor, and writes with an older set (and their younger relatives) in mind.... like a conversation over tea with a friend.",
-      source: "Associated Press",
-    },
-    {
-      quote:
-        "'Death Cleaning' is the answer to clutter you've been looking for. . . . Magnusson instructs readers on how to gently and joyously put your affairs in order while you’re still alive, rather than leaving it for others to do.",
-      source: "Reader's Digest",
-    },
-    {
-      quote:
-        "Smart… death cleaning isn't about getting rid of all your stuff, but rather streamlining your life so you're only holding onto what makes you happy . . . it's about so much more than dusting and sorting.",
-      source: "Elle Décor",
-    },
-    {
-      quote:
-        "Reading her book is much like having a sensible, cheerful aunt sit you down to tell you hard truths that your mother is too nice to say.",
-      source: "Laurie Hertzel, Minneapolis Star Tribune",
-    },
-    {
-      quote:
-        "Keep only what you love and what makes you happy in the moment. It’s like Marie Kondo, but with an added sense of the transience and futility of this mortal existence.",
-      source: "The New York Post",
-    },
-    {
-      quote:
-        "The philosophy isn’t all austerity and estate planning. Margareta Magnusson advocates for giving away those possessions you and your family don’t want while you’re alive. Much like attending your own wake, passing things on (to those who actually want them) to friends and acquaintances while you are around to see it adds a layer of life to death cleaning.",
-      source: "Apartment Therapy.com",
-    },
-    {
-      quote:
-        "Has benefits you can enjoy while you’re still very much alive. . . . could be a good way for families to discuss sensitive issues that might otherwise be hard to bring up.",
-      source: "TIME",
-    },
-    {
-      quote:
-        "Pragmatic. . . . the idea in this system is that we should leave behind as little as possible, or at least, not the many thousands of items of junk that Americans often accumulate.",
-      source: "W Magazine",
-    },
-    {
-      quote:
-        "Even millennials will enjoy this non-militant approach to decluttering.",
-      source: "PEOPLE Magazine",
-    },
-    {
-      quote:
-        "A mindful way to sort through your belongings throughout your life, so that your loved ones aren’t burdened by a plethora of personal items after you die. . . . Magnusson advises that the earlier we start the process of ‘death cleaning’, the better, so we’re not overwhelmed with a lifetime of objects by the time we’re elderly people.",
-      source: "Better Homes and Gardens",
-    },
-    {
-      quote:
-        "I far prefer the charming, empathetic technique of Margareta Magnusson, whose book is a game-changer. I highly recommend it for anyone wrestling with a lifetime of wonderful — and not so wonderful — stuff.",
-      source: 'Amy Dickinson, "Ask Amy"',
-    },
-    {
-      quote:
-        "Packed with positive and practical suggestions, this slim volume could change your life.",
-      source: "Juliet Stevenson, Actress & Narrator of the Audio Edition",
-    },
-    {
-      quote:
-        "A mindful way to sort through your belongings throughout your life.",
-      source: "Better Homes and Gardens Australia",
-    },
-    {
-      quote:
-        "Lovers of Scandinavian culture who are already tired of hygge, Denmark’s cosy way of relaxing, can give the latest Scandi-trend a try with döstädning, or Swedish ‘death-cleaning’. Sweden's concept of 'death-cleaning' is spreading around the world.",
-      source: "The Lonely Planet",
-    },
-    {
-      quote:
-        "Marie Kondo found worldwide fame with her book The Life-Changing Magic Of Tidying Up, which espoused the theory you should get rid of anything that doesn't spark joy. Now a forthcoming book theorises that rather than considering your own feelings about your belongings, you should ask yourself: “Will anyone I know be happier if I save this?",
-      source: "The Daily Mail",
-    },
-    {
-      quote:
-        "You don't need to be elderly or middle aged to subscribe to [Magnusson’s] ethos.",
-      source: "Huffington Post Australia",
-    },
-    {
-      quote:
-        "Margareta Magnusson’s death-cleaning is charming, wise and subtle.",
-      source: "Barometern",
-    },
-    {
-      quote: "Clean now – tomorrow you could be dead!",
-      source: "Magasinet FILTER",
-    },
-  ];
-
   return (
     <div className={styles.container}>
+      <Head>
+        <title>
+          The Gentle Art of Swedish Death Cleaning - Margareta Magnusson
+        </title>
+      </Head>
       <section className={styles.main__section}>
-        {/* <div className={styles.main__content}> */}
         <div className={styles.cover__container}>
           <Image
             src={DeathCleaningCover}
@@ -169,8 +68,8 @@ const SwedishDeathCleaning = () => {
             alt="3d-cover-sdc"
           />
         </div>
-        <div className={styles.book__info}>
-          <p className={styles.title}>
+        <div className={styles.book__info__container}>
+          <p className={styles.book__title__sdc}>
             The Gentle Art of Swedish Death Cleaning
           </p>
           <p className={styles.subtitle}>
@@ -179,7 +78,7 @@ const SwedishDeathCleaning = () => {
             <br />
             Soon to be a major 8 - episode series on Peacock produced by Scout
             Productions (Queer Eye) and Amy Poehler’s Paper Kite Productions
-            (Making It , Russian Doll)
+            (Making It, Russian Doll)
           </p>
           <p className={styles.description}>
             In Sweden there is a kind of decluttering called döstädning, dö
@@ -187,7 +86,7 @@ const SwedishDeathCleaning = () => {
             invigorating process of clearing out unnecessary belongings can be
             undertaken at any age or life stage but should be done sooner than
             later, before others have to do it for you. In The Gentle Art of
-            Swedish Death Cleaning , artist Margareta Magnusson, with
+            Swedish Death Cleaning, artist Margareta Magnusson, with
             Scandinavian humor and wisdom, instructs readers to embrace
             minimalism. Her radical and joyous method for putting things in
             order helps families broach sensitive conversations, and makes the
@@ -238,20 +137,94 @@ const SwedishDeathCleaning = () => {
             <Image src={AppleBL} alt="applebooks-logo" />
           </div>
         </div>
+      </section>
+      <section className={styles.international__covers__section}>
+        <p className={styles.title}>International Covers</p>
+        <div className={styles.title__underline} />
+        <Carousel>
+          <div className={carousel__styles.embla__slide}>
+            <div className={styles.slide__container}>
+              <div className={styles.international__cover__container}>
+                <Image src={Aus} alt="sdc-aus-cover" />
+              </div>
 
-        {/* <div className={styles.uk__info__container}>
-            <p className={styles.uk__info}>UK Edition From Canongate:</p>
-            <div
-              className={styles.uk__cover__container}
-              onClick={() => redirect(CANONGATE_URL)}
-            >
-              <Image src={UKCover} alt="sdc-uk-cover" />
+              <div className={styles.uk__container}>
+                <p className={styles.uk__info}>UK Edition From Canongate:</p>
+                <div
+                  className={styles.uk__cover__container}
+                  onClick={() => redirect(CANONGATE_URL)}
+                >
+                  <Image src={UK} alt="sdc-uk-cover" />
+                </div>
+              </div>
+
+              <div className={styles.international__cover__container}>
+                <Image src={Catalan} alt="sdc-catalan-cover" />
+              </div>
             </div>
-          </div> */}
-        {/* </div> */}
+          </div>
+          <div className={carousel__styles.embla__slide}>
+            <div className={styles.slide__container}>
+              <div className={styles.international__cover__container}>
+                <Image src={Chinese} alt="sdc-chinese-cover" />
+              </div>
+              <div className={styles.international__cover__container}>
+                <Image src={French} alt="sdc-french-cover" />
+              </div>
+              <div className={styles.international__cover__container}>
+                <Image src={Dutch} alt="sdc-dutch-cover" />
+              </div>
+            </div>
+          </div>
+          <div className={carousel__styles.embla__slide}>
+            <div className={styles.slide__container}>
+              <div className={styles.international__cover__container}>
+                <Image src={German} alt="sdc-german-cover" />
+              </div>
+
+              <div className={styles.international__cover__container}>
+                <Image src={Hindi} alt="sdc-hindi-cover" />
+              </div>
+
+              <div className={styles.international__cover__container}>
+                <Image src={Hungarian} alt="sdc-hungarian-cover" />
+              </div>
+            </div>
+          </div>
+          <div className={carousel__styles.embla__slide}>
+            <div className={styles.slide__container}>
+              <div className={styles.international__cover__container}>
+                <Image src={Japanese} alt="sdc-japanese-cover" />
+              </div>
+
+              <div className={styles.international__cover__container}>
+                <Image src={NZ} alt="sdc-nz-cover" />
+              </div>
+
+              <div className={styles.international__cover__container}>
+                <Image src={Polish} alt="sdc-polish-cover" />
+              </div>
+            </div>
+          </div>
+          <div className={carousel__styles.embla__slide}>
+            <div className={styles.slide__container}>
+              <div className={styles.international__cover__container}>
+                <Image src={Portuguese} alt="sdc-portuguese-cover" />
+              </div>
+
+              <div className={styles.international__cover__container}>
+                <Image src={Russian} alt="sdc-russian-cover" />
+              </div>
+
+              <div className={styles.international__cover__container}>
+                <Image src={Spanish} alt="sdc-spanish-cover" />
+              </div>
+            </div>
+          </div>
+        </Carousel>
       </section>
       <section className={styles.praise__section}>
-        <p className={styles.praise__title}>Praise</p>
+        <p className={styles.title}>Praise</p>
         <div className={styles.quotes__container}>
           {quotes.map((quote, index) => {
             return (

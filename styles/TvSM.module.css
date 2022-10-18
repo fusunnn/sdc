@@ -1,0 +1,37 @@
+.headlines__section {
+  padding: 0rem 4rem 2rem 4rem;
+}
+
+.headlines__container__1,
+.headlines__container__2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headlines__container__1 {
+  border-top: 1px solid var(--accent);
+  padding-top: 2rem;
+}
+
+.headlines__container__2 {
+  margin-top: 2rem;
+}
+
+.headline__container {
+  width: 48%;
+  cursor: pointer;
+}
+
+.youtube__section {
+  padding: 0rem 4rem 2rem 4rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.title__underline {
+  width: 100%;
+  border-bottom: 1px solid var(--accent);
+}

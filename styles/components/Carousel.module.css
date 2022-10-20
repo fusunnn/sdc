@@ -1,52 +1,72 @@
 .embla {
-  overflow: hidden;
-  /* height: 35rem; */
-  margin-top: 2rem;
-}
-.embla__container {
-  display: flex;
-}
-.embla__slide {
-  flex: 0 0 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
 }
 
-.embla__prev,
-.embla__next {
-  position: absolute;
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__viewport.is-draggable {
+  cursor: move;
+  cursor: grab;
+}
+
+.embla__viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.embla__container {
+  display: flex;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.embla__slide {
+  position: relative;
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.embla__next,
+.embla__prev {
+  outline: 0;
   cursor: pointer;
+  background-color: transparent;
+  touch-action: manipulation;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
 .embla__prev {
-  left: 6rem;
+  left: 1rem;
 }
 
 .embla__next {
-  right: 6rem;
+  right: 1rem;
 }
+
 @media (max-width: 960px) {
   .embla__prev {
-    left: 0.5rem;
+    left: 0rem;
   }
 
   .embla__next {
-    right: 0.5rem;
-  }
-}
-
-@media (max-width: 540px) {
-  .embla__prev {
-    left: 0.2rem;
-  }
-
-  .embla__next {
-    right: 0.2rem;
-  }
-
-  .empla__prev,
-  .embla__next {
-    transform: translateY(5%);
+    right: 0rem;
   }
 }

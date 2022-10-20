@@ -115,7 +115,7 @@
   }
   .mobile__menu__element {
     color: inherit;
-
+    cursor: pointer;
     text-decoration: none;
   }
   .mobile__menu__element:hover {

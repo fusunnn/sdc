@@ -9,19 +9,14 @@ interface Props {
   children?: React.ReactNode;
 }
 export const Carousel = ({ children }: Props) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [viewportRef, embla] = useEmblaCarousel({ loop: false });
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
+  const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
+  const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
 
   return (
     <div className={styles.embla}>
-      <div className={styles.embla__viewport} ref={emblaRef}>
+      <div className={styles.embla__viewport} ref={viewportRef}>
         <div className={styles.embla__container}>{children}</div>
       </div>
       <div className={styles.embla__prev} onClick={scrollPrev}>

@@ -12,6 +12,8 @@ import Saunders from "../public/assets/tv/saunders.png";
 import Carousel from "../components/Carousel";
 import carousel__styles from "../styles/components/Carousel.module.css";
 
+import { FaFacebookSquare, FaInstagram } from "react-icons/fa";
+
 const TvSM = () => {
   const redirect = (url: string) => {
     window.open(url, "_blank");
@@ -24,7 +26,25 @@ const TvSM = () => {
         <title>TV & Social Media - Margareta Magnusson</title>
       </Head>
       <section className={styles.headlines__section}>
-        <p className={styles.title}>TV & Social Media</p>
+        <div className={styles.title__container}>
+          <div className={styles.title}>TV & Social Media</div>
+          <div className={styles.social__media__icons__container}>
+            <FaInstagram
+              size={28}
+              className={styles.social__media__icon}
+              onClick={() =>
+                redirect("https://www.instagram.com/swedishdeathcleaning/")
+              }
+            />
+            <FaFacebookSquare
+              size={28}
+              className={styles.social__media__icon}
+              onClick={() =>
+                redirect("https://www.facebook.com/deathcleaning/")
+              }
+            />
+          </div>
+        </div>
         <div className={styles.headlines__grid}>
           <div
             className={styles.headline__container}
@@ -70,7 +90,7 @@ const TvSM = () => {
         </div>
       </section>
       <section className={styles.youtube__section}>
-        <p className={styles.title}>Death Cleaning on YouTube</p>
+        <div className={styles.youtube__title}>Death Cleaning on YouTube</div>
         <div className={styles.title__underline} />
         <div className={styles.carousel__container}>
           <Carousel>

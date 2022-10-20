@@ -22,7 +22,26 @@
   font-size: 1.5rem;
   font-weight: bold;
 }
+.youtube__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 0.8rem;
+}
 
+.title__container {
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+
+  align-items: center;
+  padding-bottom: 0.8rem;
+}
+.social__media__icons__container {
+}
+.social__media__icon {
+  margin-left: 1rem;
+  cursor: pointer;
+}
 .title__underline {
   width: 100%;
   border-bottom: 1px solid var(--accent);

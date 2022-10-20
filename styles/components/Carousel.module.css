@@ -17,7 +17,6 @@
 .embla__next {
   position: absolute;
   cursor: pointer;
-  transform: translateY(5%);
 }
 
 .embla__prev {
@@ -44,5 +43,10 @@
 
   .embla__next {
     right: 0.2rem;
+  }
+
+  .empla__prev,
+  .embla__next {
+    transform: translateY(5%);
   }
 }

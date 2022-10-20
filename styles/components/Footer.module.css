@@ -3,12 +3,16 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 4rem 4rem 2rem 4rem;
-  background-color: #fbc524;
+  background-color: var(--accent);
   width: 100%;
 }
 .footer__links__container {
   display: flex;
   justify-content: space-between;
+}
+
+.link__container {
+  width: 23%;
 }
 
 .link__title {
@@ -34,4 +38,24 @@
   font-family: "Hind Madurai", sans-serif;
   font-weight: 500;
   font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 960px) {
+  .footer__container {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .link__title {
+    font-size: 1rem;
+  }
+  .link__element {
+    font-size: 0.9rem;
+  }
+
+  .mm__copyright {
+    font-size: 1rem;
+  }
 }

@@ -97,18 +97,27 @@
 @media (max-width: 960px) {
   .home__section {
     flex-direction: column-reverse;
-    padding: 2rem 1rem 6rem 1rem;
+    padding: 2rem 1rem 2rem 1rem;
   }
   .crabs__sketch__container {
     display: none;
   }
 
   .mm__portrait__container {
+    width: 70%;
+  }
+  .home__left {
+    width: 70%;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .mm__portrait__container {
     width: 100%;
   }
   .home__left {
     width: 100%;
-    margin-top: 1rem;
   }
 }
 
@@ -272,11 +281,6 @@
   padding: 2rem 4rem 4rem 4rem;
 }
 
-@media (max-width: 960px) {
-  .videos__section {
-    padding: 2rem 1rem 4rem 1rem;
-  }
-}
 .videos__section__title {
   font-weight: bold;
   font-size: 1.8rem;
@@ -287,4 +291,14 @@
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+@media (max-width: 960px) {
+  .videos__section {
+    padding: 2rem 1rem;
+  }
+
+  .video__container {
+    padding: 1rem 0rem;
+  }
 }

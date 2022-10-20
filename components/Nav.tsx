@@ -59,20 +59,20 @@ export const Nav = () => {
           </Link>
         </DropDown>
         <Link href="/press">
-          <a
+          <p
             className={styles.mobile__menu__element}
             onClick={handleMobileMenuClick}
           >
             Press
-          </a>
+          </p>
         </Link>
         <Link href="/tv-sm">
-          <a
+          <p
             className={styles.mobile__menu__element}
             onClick={handleMobileMenuClick}
           >
             TV & Social Media
-          </a>
+          </p>
         </Link>
         <a
           href="https://www.susannalea.com/contact/"
@@ -107,12 +107,12 @@ export const Nav = () => {
         </li>
         <Link href="/press">
           <li>
-            <a>Press</a>
+            <p className={styles.nav__text__element}>Press</p>
           </li>
         </Link>
         <Link href="/tv-sm">
           <li>
-            <a>TV & Social Media</a>
+            <p className={styles.nav__text__element}>TV & Social Media</p>
           </li>
         </Link>
         <li>
@@ -120,6 +120,7 @@ export const Nav = () => {
             href="https://www.susannalea.com/contact/"
             target="_blank"
             rel="noreferrer"
+            className={styles.nav__text__element}
           >
             Contact
           </a>

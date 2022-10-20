@@ -35,21 +35,22 @@
 
 .nav > ul > li {
   display: inline-block;
-  color: #000;
-  margin-left: 2rem;
   font-weight: 500;
   font-size: 1.2rem;
+  margin-left: 2rem;
+  cursor: pointer;
 }
 
-.nav > ul > li > a {
-  cursor: pointer;
+.nav__text__element {
   text-decoration: none;
   color: inherit;
   display: inline-block;
   position: relative;
 }
-
-.nav > ul > li > a::after {
+.nav__text__element:hover {
+  color: inherit;
+}
+.nav__text__element:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -62,7 +63,7 @@
   transition: transform 0.25s ease-out;
 }
 
-.nav > ul > li > a:hover::after {
+.nav__text__element:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }

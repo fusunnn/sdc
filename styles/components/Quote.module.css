@@ -1,5 +1,5 @@
 .container {
-  width: 60rem;
+  width: 60%;
 
   margin-top: 1rem;
 }
@@ -14,4 +14,14 @@
   font-style: italic;
   margin-left: 3rem;
   font-family: "Hind Madurai", sans-serif;
+}
+@media (max-width: 960px) {
+  .container {
+    width: 80%;
+  }
+}
+@media (max-width: 570px) {
+  .container {
+    width: 100%;
+  }
 }

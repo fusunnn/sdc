@@ -29,3 +29,30 @@
 .pause__container {
   grid-row: span 2;
 }
+
+@media (max-width: 960px) {
+  .container {
+    padding: 0rem 1rem 2rem 1rem;
+  }
+  .grid__container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0rem;
+  }
+  .frankfurter__container {
+    grid-row: span 1;
+  }
+  .pause__container {
+    grid-row: span 1;
+    grid-row-start: 4;
+  }
+  .people__container {
+    grid-row-start: 2;
+  }
+  .wired__container {
+    grid-row-start: 4;
+  }
+
+  .tina__container {
+    grid-row-start: 4;
+  }
+}

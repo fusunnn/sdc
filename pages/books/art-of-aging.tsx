@@ -42,45 +42,47 @@ const ArtOfAging = () => {
         <title>The Swedish Art of Aging Exuberantly- Margareta Magnusson</title>
       </Head>
       <section className={styles.main__section}>
-        <div className={styles.cover__container} data-aos="fade-right">
-          <Image
-            src={ArtOfAgingCover}
-            placeholder="blur"
-            alt="3d-cover-aging"
-          />
-        </div>
-        <div className={styles.book__info__container}>
-          <p className={styles.book__title__art__aging}>
-            The Swedish Art of Aging Exuberantly
-          </p>
-          <p className={styles.subtitle}>
-            Life Wisdom from Someone Who Will (Probably) Die Before You
-            <br />
-            Rights sold in 7 territories
-          </p>
-          <p className={styles.description}>
-            Margareta Magnusson shared with the world her practical Swedish
-            tradition of döstädning , or “death cleaning” — clearing out
-            unnecessary belongings before others must do it for you — in her
-            international bestseller The Gentle Art of Swedish Death Cleaning.
-            Now, unburdened by baggage (emotional and actual) she is able to
-            focus on what makes each day worth living, and reveals her
-            discoveries about growing older — some difficult to accept, many
-            rather wondrous. She reflects on her early days growing up in Sweden
-            and raising her family around the world, offering tips and w isdom
-            on how to age gracefully, such as: don’t be afraid to wear stripes,
-            don’t resist new technology, let go of what doesn’t matter, and much
-            more. As with death - cleaning, it’s never too early to begin and
-            The Swedish Art of Aging Well shows us how to pr epare for and
-            understand the aging process, and the joys and sorrows it can bring.
-            While Margareta still recommends ongoing downsizing and decluttering
-            (your loved ones will thank you!) her ultimate message is that we
-            should all be less afraid of the idea of death. Wise, funny, and
-            practical, The Swedish Art of Aging Well is a gentle and welcome
-            reminder that, no matter your age, there are always fresh
-            discoveries ahead, and pleasures both new and familiar to be enjoyed
-            every day.
-          </p>
+        <div className={styles.cover__and__info__container}>
+          <div className={styles.cover__container} data-aos="fade-right">
+            <Image
+              src={ArtOfAgingCover}
+              placeholder="blur"
+              alt="3d-cover-aging"
+            />
+          </div>
+          <div className={styles.book__info__container}>
+            <p className={styles.book__title__art__aging}>
+              The Swedish Art of Aging Exuberantly
+            </p>
+            <p className={styles.subtitle}>
+              Life Wisdom from Someone Who Will (Probably) Die Before You
+              <br />
+              Rights sold in 7 territories
+            </p>
+            <p className={styles.description}>
+              Margareta Magnusson shared with the world her practical Swedish
+              tradition of döstädning , or “death cleaning” — clearing out
+              unnecessary belongings before others must do it for you — in her
+              international bestseller The Gentle Art of Swedish Death Cleaning.
+              Now, unburdened by baggage (emotional and actual) she is able to
+              focus on what makes each day worth living, and reveals her
+              discoveries about growing older — some difficult to accept, many
+              rather wondrous. She reflects on her early days growing up in
+              Sweden and raising her family around the world, offering tips and
+              w isdom on how to age gracefully, such as: don’t be afraid to wear
+              stripes, don’t resist new technology, let go of what doesn’t
+              matter, and much more. As with death - cleaning, it’s never too
+              early to begin and The Swedish Art of Aging Well shows us how to
+              pr epare for and understand the aging process, and the joys and
+              sorrows it can bring. While Margareta still recommends ongoing
+              downsizing and decluttering (your loved ones will thank you!) her
+              ultimate message is that we should all be less afraid of the idea
+              of death. Wise, funny, and practical, The Swedish Art of Aging
+              Well is a gentle and welcome reminder that, no matter your age,
+              there are always fresh discoveries ahead, and pleasures both new
+              and familiar to be enjoyed every day.
+            </p>
+          </div>
         </div>
 
         <div className={styles.buylinks__container}>
@@ -104,19 +106,20 @@ const ArtOfAging = () => {
           >
             <Image src={BookshopBL} alt="bookshop-logo" />
           </div>
+          <div className={styles.buylinks__last__row}>
+            <div
+              className={styles.logo__container}
+              onClick={() => redirect(SIMONSCHUSTER_URL)}
+            >
+              <Image src={SimonSchusterBL} alt="simonschuster-logo" />
+            </div>
 
-          <div
-            className={styles.logo__container}
-            onClick={() => redirect(SIMONSCHUSTER_URL)}
-          >
-            <Image src={SimonSchusterBL} alt="simonschuster-logo" />
-          </div>
-
-          <div
-            className={styles.logo__container}
-            onClick={() => redirect(APPLEBOOKS_URL)}
-          >
-            <Image src={AppleBL} alt="applebooks-logo" />
+            <div
+              className={styles.logo__container}
+              onClick={() => redirect(APPLEBOOKS_URL)}
+            >
+              <Image src={AppleBL} alt="applebooks-logo" />
+            </div>
           </div>
         </div>
       </section>

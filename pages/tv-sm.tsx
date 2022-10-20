@@ -25,7 +25,7 @@ const TvSM = () => {
       </Head>
       <section className={styles.headlines__section}>
         <p className={styles.title}>TV & Social Media</p>
-        <div className={styles.headlines__container__1}>
+        <div className={styles.headlines__grid}>
           <div
             className={styles.headline__container}
             onClick={() =>
@@ -46,8 +46,7 @@ const TvSM = () => {
           >
             <Image src={Deadline} alt="deadline-headline" />
           </div>
-        </div>
-        <div className={styles.headlines__container__2}>
+
           <div
             className={styles.headline__container}
             onClick={() =>
@@ -73,41 +72,43 @@ const TvSM = () => {
       <section className={styles.youtube__section}>
         <p className={styles.title}>Death Cleaning on YouTube</p>
         <div className={styles.title__underline} />
-        <Carousel>
-          <div className={carousel__styles.embla__slide}>
-            <iframe
-              width="966"
-              height="543"
-              src="https://www.youtube.com/embed/3XNbAbhQZFA"
-              title="I tried 'Swedish Death Cleaning' (and it worked!)"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div className={carousel__styles.embla__slide}>
-            <iframe
-              width="966"
-              height="543"
-              src="https://www.youtube.com/embed/TED9GXg8WGg"
-              title="I FINALLY TRIED SWEDISH DEATH CLEANING (and it actually works!!!)"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div className={carousel__styles.embla__slide}>
-            <iframe
-              width="966"
-              height="543"
-              src="https://www.youtube.com/embed/8vmjd3SfTeo"
-              title="Swedish Death Cleaning: Just 2 questions to ask yourself"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </Carousel>
+        <div className={styles.carousel__container}>
+          <Carousel>
+            <div className={carousel__styles.embla__slide}>
+              <iframe
+                width="966"
+                height="543"
+                src="https://www.youtube.com/embed/3XNbAbhQZFA"
+                title="I tried 'Swedish Death Cleaning' (and it worked!)"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className={carousel__styles.embla__slide}>
+              <iframe
+                width="966"
+                height="543"
+                src="https://www.youtube.com/embed/TED9GXg8WGg"
+                title="I FINALLY TRIED SWEDISH DEATH CLEANING (and it actually works!!!)"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className={carousel__styles.embla__slide}>
+              <iframe
+                width="966"
+                height="543"
+                src="https://www.youtube.com/embed/8vmjd3SfTeo"
+                title="Swedish Death Cleaning: Just 2 questions to ask yourself"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </Carousel>
+        </div>
       </section>
     </div>
   );

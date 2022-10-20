@@ -75,7 +75,7 @@
   display: none;
 }
 
-@media (max-width: 940px) {
+@media (max-width: 960px) {
   .nav {
     padding: 0rem 1rem;
   }

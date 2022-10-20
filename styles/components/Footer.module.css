@@ -43,7 +43,7 @@
 
 @media (max-width: 960px) {
   .footer__container {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1rem 1rem;
   }
 }
 
@@ -52,7 +52,7 @@
     font-size: 1rem;
   }
   .link__element {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .mm__copyright {

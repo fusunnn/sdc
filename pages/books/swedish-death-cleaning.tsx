@@ -61,45 +61,47 @@ const SwedishDeathCleaning = () => {
         </title>
       </Head>
       <section className={styles.main__section}>
-        <div className={styles.cover__container} data-aos="fade-right">
-          <Image
-            src={DeathCleaningCover}
-            placeholder="blur"
-            alt="3d-cover-sdc"
-          />
-        </div>
-        <div className={styles.book__info__container}>
-          <p className={styles.book__title__sdc}>
-            The Gentle Art of Swedish Death Cleaning
-          </p>
-          <p className={styles.subtitle}>
-            A New York Times Bestseller <br />
-            Published in 30 Territories
-            <br />
-            Soon to be a major 8 - episode series on Peacock produced by Scout
-            Productions (Queer Eye) and Amy Poehler’s Paper Kite Productions
-            (Making It, Russian Doll)
-          </p>
-          <p className={styles.description}>
-            In Sweden there is a kind of decluttering called döstädning, dö
-            meaning “death” and städning meaning “cleaning.” This surprising and
-            invigorating process of clearing out unnecessary belongings can be
-            undertaken at any age or life stage but should be done sooner than
-            later, before others have to do it for you. In The Gentle Art of
-            Swedish Death Cleaning, artist Margareta Magnusson, with
-            Scandinavian humor and wisdom, instructs readers to embrace
-            minimalism. Her radical and joyous method for putting things in
-            order helps families broach sensitive conversations, and makes the
-            process uplifting rather than overwhelming. Margareta suggests which
-            possessions you can easily get rid of (unworn clothes, unwanted
-            presents, more plates than you’d ever use) and which you might want
-            to keep (photographs, love letters, a few of your children’s art
-            projects). Digging into her late husband’s tool shed, and her own
-            secret drawer of vices, Margareta introduces an element of fun to a
-            potentially daunting task. Along the way readers get a glimpse into
-            her life in Sweden, and also become more comfortable with the idea
-            of letting go.
-          </p>
+        <div className={styles.cover__and__info__container}>
+          <div className={styles.cover__container} data-aos="fade-right">
+            <Image
+              src={DeathCleaningCover}
+              placeholder="blur"
+              alt="3d-cover-sdc"
+            />
+          </div>
+          <div className={styles.book__info__container}>
+            <p className={styles.book__title__sdc}>
+              The Gentle Art of Swedish Death Cleaning
+            </p>
+            <p className={styles.subtitle}>
+              A New York Times Bestseller <br />
+              Published in 30 Territories
+              <br />
+              Soon to be a major 8 - episode series on Peacock produced by Scout
+              Productions (Queer Eye) and Amy Poehler’s Paper Kite Productions
+              (Making It, Russian Doll)
+            </p>
+            <p className={styles.description}>
+              In Sweden there is a kind of decluttering called döstädning, dö
+              meaning “death” and städning meaning “cleaning.” This surprising
+              and invigorating process of clearing out unnecessary belongings
+              can be undertaken at any age or life stage but should be done
+              sooner than later, before others have to do it for you. In The
+              Gentle Art of Swedish Death Cleaning, artist Margareta Magnusson,
+              with Scandinavian humor and wisdom, instructs readers to embrace
+              minimalism. Her radical and joyous method for putting things in
+              order helps families broach sensitive conversations, and makes the
+              process uplifting rather than overwhelming. Margareta suggests
+              which possessions you can easily get rid of (unworn clothes,
+              unwanted presents, more plates than you’d ever use) and which you
+              might want to keep (photographs, love letters, a few of your
+              children’s art projects). Digging into her late husband’s tool
+              shed, and her own secret drawer of vices, Margareta introduces an
+              element of fun to a potentially daunting task. Along the way
+              readers get a glimpse into her life in Sweden, and also become
+              more comfortable with the idea of letting go.
+            </p>
+          </div>
         </div>
         <div className={styles.buylinks__container}>
           <div
@@ -108,39 +110,38 @@ const SwedishDeathCleaning = () => {
           >
             <Image src={AmazonBL} alt="amazon-logo" />
           </div>
-
           <div
             className={styles.logo__container}
             onClick={() => redirect(BARNESNOBLE_URL)}
           >
             <Image src={BarnesNobleBL} alt="barnesnoble-logo" />
           </div>
-
           <div
             className={styles.logo__container}
             onClick={() => redirect(BOOKSHOP_URL)}
           >
             <Image src={BookshopBL} alt="bookshop-logo" />
           </div>
-
-          <div
-            className={styles.logo__container}
-            onClick={() => redirect(SIMONSCHUSTER_URL)}
-          >
-            <Image src={SimonSchusterBL} alt="simonschuster-logo" />
-          </div>
-
-          <div
-            className={styles.logo__container}
-            onClick={() => redirect(APPLEBOOKS_URL)}
-          >
-            <Image src={AppleBL} alt="applebooks-logo" />
+          <div className={styles.buylinks__last__row}>
+            <div
+              className={styles.logo__container}
+              onClick={() => redirect(SIMONSCHUSTER_URL)}
+            >
+              <Image src={SimonSchusterBL} alt="simonschuster-logo" />
+            </div>
+            <div
+              className={styles.logo__container__apple}
+              onClick={() => redirect(APPLEBOOKS_URL)}
+            >
+              <Image src={AppleBL} alt="applebooks-logo" />
+            </div>
           </div>
         </div>
       </section>
       <section className={styles.international__covers__section}>
         <p className={styles.title}>International Covers</p>
         <div className={styles.title__underline} />
+
         <Carousel>
           <div className={carousel__styles.embla__slide}>
             <div className={styles.slide__container}>

@@ -24,9 +24,16 @@
 }
 
 .book__info__container {
+  display: flex;
+  flex-direction: column;
   width: 40rem;
 }
-
+.cover__and__info__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+}
 .subtitle {
   font-family: "Hind Madurai", sans-serif;
   font-size: 1.1rem;
@@ -36,21 +43,162 @@
   font-family: "Hind", sans-serif;
 }
 .buylinks__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 30rem;
+  display: grid;
+  /* grid-template-rows: repeat(5, 1fr); */
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
-.logo__container {
+.logo__container,
+.logo__container__apple {
   width: 10rem;
   display: flex;
   justify-content: center;
   cursor: pointer;
 }
+.logo__container__apple {
+  padding-top: 1rem;
+}
+
+.buylinks__last__row {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1280px) {
+  .cover__container {
+    width: 15rem;
+  }
+
+  .book__info__container {
+    width: 35rem;
+  }
+  .book__title__sdc,
+  .book__title__art__aging {
+    font-size: 1.3rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+  .logo__container,
+  .logo__container__apple {
+    width: 9rem;
+  }
+}
+
+@media (max-width: 1120px) {
+  .cover__container {
+    width: 13rem;
+  }
+
+  .book__info__container {
+    width: 30rem;
+  }
+  .book__title__sdc,
+  .book__title__art__aging {
+    font-size: 1.1rem;
+  }
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .description {
+    font-size: 0.7rem;
+  }
+
+  .logo__container,
+  .logo__container__apple {
+    width: 8rem;
+  }
+}
+@media (max-width: 1060px) {
+  .book__info__container {
+    width: 28rem;
+  }
+  .cover__container {
+    width: 11rem;
+  }
+}
+
+@media (max-width: 880px) {
+  .main__section {
+    flex-direction: column;
+  }
+  .cover__container {
+    width: 30%;
+  }
+  .book__info__container {
+    width: 60%;
+  }
+  .cover__and__info__container {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .book__title__sdc,
+  .book__title__art__aging {
+    font-size: 1.1rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .buylinks__container {
+    margin-top: 1rem;
+    /* flex-direction: row;
+    height: auto; */
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
+  }
+  .buylinks__last__row {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* width: 100%; */
+    /* background: #000; */
+    grid-column: span 3;
+  }
+
+  .logo__container__apple {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 678px) {
+  .cover__and__info__container {
+    flex-direction: column;
+  }
+  .cover__container {
+    width: 100%;
+  }
+  .book__info__container {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .logo__container,
+  .logo__container__apple {
+    width: 7rem;
+  }
+  .book__title__sdc,
+  .book__title__art__aging {
+    font-size: 1.3rem;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
 .international__covers__section {
-  padding: 0rem 4rem 1rem 4rem;
+  padding: 2rem 4rem 1rem 4rem;
 }
 .international__cover__container {
   width: 15rem;
@@ -73,16 +221,78 @@
   width: 20rem;
   cursor: pointer;
 }
+
+@media (max-width: 960px) {
+  .uk__cover__container {
+    width: 18rem;
+    cursor: pointer;
+  }
+
+  .international__cover__container {
+    width: 13rem;
+  }
+}
+
+@media (max-width: 840px) {
+  .uk__cover__container {
+    width: 15rem;
+    cursor: pointer;
+  }
+
+  .international__cover__container {
+    width: 10rem;
+  }
+}
+
 .uk__info {
   font-size: 1.1rem;
   font-weight: 600;
   font-family: "Hind Madurai", sans-serif;
 }
+@media (max-width: 680px) {
+  .uk__cover__container {
+    width: 12rem;
+    cursor: pointer;
+  }
+
+  .international__cover__container {
+    width: 8rem;
+  }
+  .uk__info {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 540px) {
+  .uk__cover__container {
+    width: 10rem;
+    cursor: pointer;
+  }
+
+  .international__cover__container {
+    width: 6rem;
+  }
+  .uk__info {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 440px) {
+  .uk__cover__container {
+    width: 9rem;
+    cursor: pointer;
+  }
+
+  .international__cover__container {
+    width: 5rem;
+  }
+  .uk__info {
+    font-size: 0.7rem;
+  }
+}
 
 .praise__section {
   display: flex;
   flex-direction: column;
-  padding: 0rem 4rem 2rem 4rem;
+  padding: 2rem 4rem 2rem 4rem;
 }
 
 .title {
@@ -101,5 +311,20 @@
   flex-direction: column;
   align-items: center;
   border-top: 1px solid var(--accent);
-  padding: 1rem;
+  /* padding: 1rem; */
+}
+
+@media (max-width: 960px) {
+  .main__section {
+    padding: 1rem 1rem 3rem 1rem;
+  }
+  .international__covers__section {
+    padding: 0rem 1rem 2rem 1rem;
+  }
+  .praise__section {
+    padding: 2rem 1rem;
+  }
+  .slide__container {
+    width: 90%;
+  }
 }

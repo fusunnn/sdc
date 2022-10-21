@@ -20,5 +20,9 @@ body {
 
 * {
   box-sizing: border-box;
+  /* color: black; */
+}
+
+p {
   color: black;
 }

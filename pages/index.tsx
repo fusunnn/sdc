@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "../styles/Home.module.css";
+import carousel__styles from "../styles/components/Carousel.module.css";
 
 import Stripes from "../public/assets/hp-pt-stripes.png";
 import Walk from "../public/assets/sketches/dleh.png";
@@ -14,6 +15,7 @@ import DeathCleaningCover from "../public/assets/covers/sdc/3dcover.png";
 import ArtOfAgingCover from "../public/assets/covers/art-aging/3dcover.png";
 
 import { CgChevronRight } from "react-icons/cg";
+import Carousel from "../components/Carousel";
 
 const Home: NextPage = () => {
   const booksSectionRef = useRef<null | HTMLDivElement>(null);
@@ -146,18 +148,22 @@ const Home: NextPage = () => {
 
       <section className={styles.videos__section}>
         <p className={styles.videos__section__title}>Videos</p>
-
-        <div className={styles.video__container}>
-          <iframe
-            width="950"
-            height="534"
-            src="https://www.youtube.com/embed/yv6fBOZlMgE"
-            title="The Gentle Art of Swedish Death Cleaning"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
+        <div className={styles.title__underline} />
+        <Carousel>
+          <div className={carousel__styles.embla__slide}>
+            <div className={styles.video__container}>
+              <iframe
+                width="950"
+                height="534"
+                src="https://www.youtube.com/embed/yv6fBOZlMgE"
+                title="The Gentle Art of Swedish Death Cleaning"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </Carousel>
       </section>
     </div>
   );

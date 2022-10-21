@@ -5,7 +5,7 @@ import Head from "next/head";
 import styles from "../../styles/books/BookPage.module.css";
 
 import ArtOfAgingCover from "../../public/assets/covers/art-aging/3dcover.png";
-import UKCover from "../../public/assets/covers/art-aging/international/uk.jpg";
+import UK from "../../public/assets/covers/art-aging/international/uk.jpg";
 
 import AmazonBL from "../../public/assets/buy-logos/amazon-bl.png";
 import BarnesNobleBL from "../../public/assets/buy-logos/barnesnoble-bl.png";
@@ -15,6 +15,7 @@ import AppleBL from "../../public/assets/buy-logos/apple-bl.svg";
 
 import { Quote } from "../../components/Quote";
 import { quotes } from "../../public/assets/quotes/art-aging-quotes";
+import { Carousel } from "../../components/Carousel";
 
 const ArtOfAging = () => {
   const redirect = (url: string) => {
@@ -122,6 +123,22 @@ const ArtOfAging = () => {
             </div>
           </div>
         </div>
+      </section>
+      <section className={styles.international__covers__section}>
+        <p className={styles.title}>International Covers</p>
+        <div className={styles.title__underline} />
+
+        <Carousel>
+          <div className={styles.uk__container}>
+            <p className={styles.uk__info}>UK Edition From Canongate:</p>
+            <div
+              className={styles.uk__cover__container}
+              onClick={() => redirect(CANONGATE_URL)}
+            >
+              <Image src={UK} alt="sdc-uk-cover" />
+            </div>
+          </div>
+        </Carousel>
       </section>
 
       <section className={styles.praise__section}>

@@ -40,7 +40,6 @@
 .embla__next,
 .embla__prev {
   outline: 0;
-  cursor: pointer;
   background-color: transparent;
   touch-action: manipulation;
   position: absolute;
@@ -51,22 +50,14 @@
   justify-content: center;
   align-items: center;
   padding: 0;
+  /* color: var(--accent); */
+  font-size: 40px;
 }
 
 .embla__prev {
-  left: 1rem;
+  left: 0rem;
 }
 
 .embla__next {
-  right: 1rem;
-}
-
-@media (max-width: 960px) {
-  .embla__prev {
-    left: 0rem;
-  }
-
-  .embla__next {
-    right: 0rem;
-  }
+  right: 0rem;
 }

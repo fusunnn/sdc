@@ -92,9 +92,10 @@ const TvSM = () => {
       <section className={styles.youtube__section}>
         <div className={styles.youtube__title}>Death Cleaning on YouTube</div>
         <div className={styles.title__underline} />
-        <div className={styles.carousel__container}>
-          <Carousel>
-            <div className={carousel__styles.embla__slide}>
+
+        <Carousel>
+          <div className={carousel__styles.embla__slide}>
+            <div className={styles.video__container}>
               <iframe
                 width="966"
                 height="543"
@@ -105,7 +106,9 @@ const TvSM = () => {
                 allowFullScreen
               ></iframe>
             </div>
-            <div className={carousel__styles.embla__slide}>
+          </div>
+          <div className={carousel__styles.embla__slide}>
+            <div className={styles.video__container}>
               <iframe
                 width="966"
                 height="543"
@@ -116,7 +119,9 @@ const TvSM = () => {
                 allowFullScreen
               ></iframe>
             </div>
-            <div className={carousel__styles.embla__slide}>
+          </div>
+          <div className={carousel__styles.embla__slide}>
+            <div className={styles.video__container}>
               <iframe
                 width="966"
                 height="543"
@@ -127,8 +132,8 @@ const TvSM = () => {
                 allowFullScreen
               ></iframe>
             </div>
-          </Carousel>
-        </div>
+          </div>
+        </Carousel>
       </section>
     </div>
   );

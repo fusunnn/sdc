@@ -4,12 +4,12 @@
 
 .book__title__sdc {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--main);
 }
 .book__title__art__aging {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--aging-color);
 }
 .main__section {
@@ -27,6 +27,7 @@
   display: flex;
   flex-direction: column;
   width: 40rem;
+  margin-left: 1rem;
 }
 .cover__and__info__container {
   display: flex;
@@ -89,7 +90,7 @@
   }
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1140px) {
   .cover__container {
     width: 13rem;
   }

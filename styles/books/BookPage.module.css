@@ -203,6 +203,7 @@
 }
 .international__cover__container {
   width: 15rem;
+  margin: 1rem;
 }
 
 .slide__container {
@@ -216,6 +217,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 1rem;
 }
 
 .uk__cover__container {

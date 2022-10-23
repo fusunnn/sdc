@@ -213,6 +213,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   font-family: "Hind Madurai", sans-serif;
+  margin: 1rem;
 }
 
 .death__cleaning__more__button,
@@ -273,7 +274,7 @@
   }
 
   .book__bio {
-    max-width: 20rem;
+    max-width: 15rem;
   }
 }
 

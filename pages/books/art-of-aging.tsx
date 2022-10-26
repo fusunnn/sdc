@@ -116,7 +116,7 @@ const ArtOfAging = () => {
             </div>
 
             <div
-              className={styles.logo__container}
+              className={styles.logo__container__apple}
               onClick={() => redirect(APPLEBOOKS_URL)}
             >
               <Image src={AppleBL} alt="applebooks-logo" />

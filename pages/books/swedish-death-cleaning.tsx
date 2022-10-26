@@ -75,7 +75,7 @@ const SwedishDeathCleaning = () => {
             </p>
             <p className={styles.subtitle}>
               A New York Times Bestseller <br />
-              Published in 30 Territories
+              Translated into 31 languages
               <br />
               Soon to be a major 8 - episode series on Peacock produced by Scout
               Productions (Queer Eye) and Amy Poehler’s Paper Kite Productions

@@ -10,22 +10,10 @@ interface Props {
   children?: React.ReactNode;
 }
 export const Carousel = ({ children }: Props) => {
-  const [viewportRef, embla] = useEmblaCarousel({ loop: false });
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
-
-  const onSelect = useCallback(() => {
-    if (!embla) return;
-    setPrevBtnEnabled(embla.canScrollPrev());
-    setNextBtnEnabled(embla.canScrollNext());
-  }, [embla]);
-
-  useEffect(() => {
-    if (!embla) return;
-    embla.on("select", onSelect);
-    embla.on("reInit", onSelect);
-    onSelect();
-  }, [embla, onSelect]);
+  const [viewportRef, embla] = useEmblaCarousel({
+    loop: true,
+    skipSnaps: false,
+  });
 
   const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
   const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
@@ -40,8 +28,7 @@ export const Carousel = ({ children }: Props) => {
           fontSize="inherit"
           sx={{
             color: "var(--accent)",
-            opacity: prevBtnEnabled ? 1 : 0.3,
-            cursor: prevBtnEnabled ? "pointer" : "default",
+            cursor: "pointer",
           }}
         />
       </div>
@@ -50,8 +37,7 @@ export const Carousel = ({ children }: Props) => {
           fontSize="inherit"
           sx={{
             color: "var(--accent)",
-            opacity: nextBtnEnabled ? 1 : 0.3,
-            cursor: nextBtnEnabled ? "pointer" : "default",
+            cursor: "pointer",
           }}
         />
       </div>

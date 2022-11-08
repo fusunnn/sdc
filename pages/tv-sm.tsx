@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -14,12 +14,32 @@ import carousel__styles from "../styles/components/Carousel.module.css";
 
 import { FaFacebookSquare, FaInstagram } from "react-icons/fa";
 
-const TvSM = () => {
-  const redirect = (url: string) => {
-    window.open(url, "_blank");
-    return;
-  };
+import { redirect } from "../utils/redirect";
+import { fetchMetadata } from "../firebase/utils/fetchMetadata";
+import { YoutubeVideoType } from "../types/YoutubeDataType";
+import { db } from "../firebase/firestore";
+import { Loading } from "../components/Loading";
+import { YoutubeVideo } from "../components/YoutubeVideo";
 
+const TvSM = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [youtubeVideosData, setYoutubeVideosData] = useState<
+    YoutubeVideoType[]
+  >([]);
+
+  useEffect(() => {
+    fetchMetadata(db, "tv-sm")
+      .then((doc) => {
+        setYoutubeVideosData(doc!.youtube__videos);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -94,45 +114,15 @@ const TvSM = () => {
         <div className={styles.title__underline} />
 
         <Carousel>
-          <div className={carousel__styles.embla__slide}>
-            <div className={styles.video__container}>
-              <iframe
-                width="966"
-                height="543"
-                src="https://www.youtube.com/embed/3XNbAbhQZFA"
-                title="I tried 'Swedish Death Cleaning' (and it worked!)"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-          <div className={carousel__styles.embla__slide}>
-            <div className={styles.video__container}>
-              <iframe
-                width="966"
-                height="543"
-                src="https://www.youtube.com/embed/TED9GXg8WGg"
-                title="I FINALLY TRIED SWEDISH DEATH CLEANING (and it actually works!!!)"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-          <div className={carousel__styles.embla__slide}>
-            <div className={styles.video__container}>
-              <iframe
-                width="966"
-                height="543"
-                src="https://www.youtube.com/embed/8vmjd3SfTeo"
-                title="Swedish Death Cleaning: Just 2 questions to ask yourself"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
+          {youtubeVideosData.map((video, i) => {
+            return (
+              <div className={carousel__styles.embla__slide} key={i}>
+                <div className={styles.video__container}>
+                  <YoutubeVideo src={video.src} title={video.title} />
+                </div>
+              </div>
+            );
+          })}
         </Carousel>
       </section>
     </div>

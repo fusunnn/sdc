@@ -2,16 +2,11 @@
   background-color: var(--bg);
 }
 
-.book__title__sdc {
+.book__title {
   font-weight: bold;
   font-size: 1.4rem;
-  color: var(--main);
 }
-.book__title__art__aging {
-  font-weight: bold;
-  font-size: 1.4rem;
-  color: var(--aging-color);
-}
+
 .main__section {
   padding: 1rem 4rem 5rem 4rem;
   display: flex;
@@ -73,8 +68,7 @@
   .book__info__container {
     width: 35rem;
   }
-  .book__title__sdc,
-  .book__title__art__aging {
+  .book__title {
     font-size: 1.3rem;
   }
   .subtitle {
@@ -98,8 +92,7 @@
   .book__info__container {
     width: 30rem;
   }
-  .book__title__sdc,
-  .book__title__art__aging {
+  .book__title {
     font-size: 1.1rem;
   }
   .subtitle {
@@ -138,8 +131,7 @@
     width: 100%;
     justify-content: space-evenly;
   }
-  .book__title__sdc,
-  .book__title__art__aging {
+  .book__title {
     font-size: 1.1rem;
   }
   .subtitle {
@@ -186,8 +178,7 @@
   .logo__container__apple {
     width: 7rem;
   }
-  .book__title__sdc,
-  .book__title__art__aging {
+  .book__title {
     font-size: 1.3rem;
   }
   .subtitle {
@@ -280,7 +271,7 @@
 }
 @media (max-width: 440px) {
   .uk__cover__container {
-    width: 9rem;
+    width: 8.5rem;
     cursor: pointer;
   }
 

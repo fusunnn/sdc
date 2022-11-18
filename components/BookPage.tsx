@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image, { StaticImageData } from "next/image";
 
 import styles from "../styles/books/BookPage.module.css";
-import BuylinksObject, { Buylink } from "../types/BuylinksObject";
+import BuylinksObject, { ClickableImage } from "../types/BuylinksObject";
 
 import carousel__styles from "../styles/components/Carousel.module.css";
 import Carousel from "./Carousel";
@@ -20,8 +20,7 @@ type Props = {
   subTitles: string[];
   bookDescription: string;
   buylinks: BuylinksObject;
-  internationalCovers: Array<Array<string>>;
-  ukInfo: Buylink;
+  internationalCovers: ClickableImage[][];
   quotes: QuoteType[];
   accentColor: string;
 };
@@ -34,7 +33,6 @@ const BookPage = ({
   bookDescription,
   buylinks,
   internationalCovers,
-  ukInfo,
   quotes,
   accentColor,
 }: Props) => {
@@ -115,51 +113,38 @@ const BookPage = ({
             return (
               <div className={carousel__styles.embla__slide} key={i}>
                 <div className={styles.slide__container}>
-                  {arr.map((coverSrc, j) => {
-                    if (i === 0 && j === 0) {
-                      return (
-                        <>
-                          <div
-                            className={styles.international__cover__container}
-                          >
-                            <Image
-                              src={coverSrc}
-                              alt="sdc-international-cover"
-                              key={j}
-                              width={350}
-                              height={500}
-                            />
-                          </div>
-                          <div className={styles.uk__container}>
-                            <p className={styles.uk__info}>
-                              UK Edition From Canongate:
-                            </p>
-                            <div
-                              className={styles.uk__cover__container}
-                              onClick={() => redirect(ukInfo.url)}
-                            >
-                              <Image
-                                src={ukInfo.imageSrc}
-                                alt="sdc-uk-cover"
-                                width={350}
-                                height={500}
-                                key={j}
-                              />
-                            </div>
-                          </div>
-                        </>
-                      );
-                    }
-
+                  {arr.map((coverObject: ClickableImage, j) => {
                     return (
-                      <div className={styles.international__cover__container}>
-                        <Image
-                          src={coverSrc}
-                          alt="sdc-international-cover"
-                          key={j}
-                          width={350}
-                          height={500}
-                        />
+                      <div
+                        className={styles.international__cover__container}
+                        key={j}
+                      >
+                        {coverObject.url.length > 0 && (
+                          <p className={styles.uk__info}>
+                            UK Edition From Canongate:
+                          </p>
+                        )}
+                        <div
+                          className={styles.international__cover__container}
+                          onClick={() => {
+                            if (coverObject.url.length > 0) {
+                              redirect(coverObject.url);
+                            }
+                          }}
+                          style={{
+                            cursor:
+                              coverObject.url.length > 0
+                                ? "pointer"
+                                : "default",
+                          }}
+                        >
+                          <Image
+                            src={coverObject.imageSrc}
+                            alt="sdc-uk-cover"
+                            width={350}
+                            height={500}
+                          />
+                        </div>
                       </div>
                     );
                   })}

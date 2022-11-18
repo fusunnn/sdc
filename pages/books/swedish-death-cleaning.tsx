@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import BookPage from "../../components/BookPage";
 
 import DeathCleaningCover from "../../public/assets/covers/sdc/3dcover.png";
@@ -10,60 +10,57 @@ import BookshopBL from "../../public/assets/buy-logos/bookshop-bl.png";
 import SimonSchusterBL from "../../public/assets/buy-logos/simonschuster-bl.png";
 import AppleBL from "../../public/assets/buy-logos/apple-bl.svg";
 
-import { Loading } from "../../components/Loading";
-
 import { fetchMetadata } from "../../firebase/utils/fetchMetadata";
 import { db } from "../../firebase/firestore";
-import {
-  fetchImage,
-  fetchMultipleImages,
-} from "../../firebase/utils/fetchImage";
-import { generateUrlList, generateUrls } from "../../utils/generate";
+import { fetchMultipleImages } from "../../firebase/utils/fetchImage";
+import { generateCoversList, generateUrls } from "../../utils/generate";
+import Quote from "../../types/Quote";
+import { ClickableImage } from "../../types/BuylinksObject";
 
-const SwedishDeathCleaning = () => {
-  const [isLoading, setIsLoading] = useState(true);
+export async function getStaticProps() {
+  const pageMetadata = await fetchMetadata(db, "sdc");
 
-  const [bookTitle, setBookTitle] = useState("");
-  const [subtitles, setSubtitles] = useState([]);
-  const [bookDescription, setBookDescription] = useState("");
-  const [quotes, setQuotes] = useState([]);
-  const [internationalCoversUrls, setInternationalCoversUrls] = useState<
-    string[][]
-  >([[]]);
+  const bookTitle = pageMetadata!.title;
+  const subtitles = pageMetadata!.subtitles;
+  const bookDescription = pageMetadata!.book__description;
+  const quotes = pageMetadata!.quotes;
 
-  useEffect(() => {
-    fetchMetadata(db, "sdc")
-      .then((doc) => {
-        setBookTitle(doc!.title);
-        setSubtitles(doc!.subtitles);
-        setBookDescription(doc!.book__description);
-        setQuotes(doc!.quotes);
-        return doc!.international__covers;
-      })
-      .then((endpoints) => {
-        const fullUrls = generateUrls(endpoints, "covers/sdc/international/");
-        return fetchMultipleImages(fullUrls);
-      })
-      .then((images) => {
-        const imageList = generateUrlList(images);
-        setInternationalCoversUrls(imageList);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
+  const internationalCoversEndpoints = pageMetadata!.international__covers;
+  const fullUrls = generateUrls(
+    internationalCoversEndpoints,
+    "covers/sdc/international/"
+  );
+  const images = await fetchMultipleImages(fullUrls);
+  const internationalCovers = generateCoversList(images);
 
-  if (isLoading) {
-    return <Loading />;
-  }
+  return {
+    props: {
+      bookTitle,
+      subtitles,
+      bookDescription,
+      quotes,
+      internationalCovers,
+    },
+  };
+}
+
+type Props = {
+  bookTitle: string;
+  subtitles: string[];
+  bookDescription: string;
+  quotes: Quote[];
+  internationalCovers: ClickableImage[][];
+};
+
+const SwedishDeathCleaning = (props: Props) => {
   return (
     <>
       <BookPage
         pageTitle="The Gentle Art of Swedish Death Cleaning - Margareta Magnusson"
         mainCoverSrc={DeathCleaningCover}
-        bookTitle={bookTitle}
-        subTitles={subtitles}
-        bookDescription={bookDescription}
+        bookTitle={props.bookTitle}
+        subTitles={props.subtitles}
+        bookDescription={props.bookDescription}
         buylinks={{
           amazon: {
             url: "https://www.amazon.com/Gentle-Art-Swedish-Death-Cleaning/dp/1501173243",
@@ -86,12 +83,8 @@ const SwedishDeathCleaning = () => {
             imageSrc: AppleBL,
           },
         }}
-        internationalCovers={internationalCoversUrls}
-        ukInfo={{
-          imageSrc: UK,
-          url: "https://canongate.co.uk/books/3192-dostadning-the-gentle-art-of-swedish-death-cleaning/",
-        }}
-        quotes={quotes}
+        internationalCovers={props.internationalCovers}
+        quotes={props.quotes}
         accentColor="var(--main)"
       />
     </>

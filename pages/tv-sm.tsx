@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -18,28 +18,26 @@ import { redirect } from "../utils/redirect";
 import { fetchMetadata } from "../firebase/utils/fetchMetadata";
 import { YoutubeVideoType } from "../types/YoutubeDataType";
 import { db } from "../firebase/firestore";
-import { Loading } from "../components/Loading";
 import { YoutubeVideo } from "../components/YoutubeVideo";
 
-const TvSM = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [youtubeVideosData, setYoutubeVideosData] = useState<
-    YoutubeVideoType[]
-  >([]);
 
-  useEffect(() => {
-    fetchMetadata(db, "tv-sm")
-      .then((doc) => {
-        setYoutubeVideosData(doc!.youtube__videos);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
+export async function getStaticProps() {
+  const pageMetadata = await fetchMetadata(db, 'tv-sm')
 
-  if (isLoading) {
-    return <Loading />;
+  const youtubeVideosData = pageMetadata!.youtube__videos;
+
+  return {
+    props: {
+      youtubeVideosData
+    }
   }
+}
+
+type Props = {
+  youtubeVideosData:YoutubeVideoType[]
+}
+
+const TvSM = (props: Props) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -114,7 +112,7 @@ const TvSM = () => {
         <div className={styles.title__underline} />
 
         <Carousel>
-          {youtubeVideosData.map((video, i) => {
+          {props.youtubeVideosData.map((video, i) => {
             return (
               <div className={carousel__styles.embla__slide} key={i}>
                 <div className={styles.video__container}>

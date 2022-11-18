@@ -1,5 +1,4 @@
-import { useRef, useState } from "react";
-import type { NextPage } from "next";
+import React, { useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,43 +15,45 @@ import ArtOfAgingCover from "../public/assets/covers/art-aging/3dcover.png";
 
 import { CgChevronRight } from "react-icons/cg";
 import Carousel from "../components/Carousel";
-import { useEffect } from "react";
-import { Loading } from "../components/Loading";
+
 
 import { db } from "../firebase/firestore";
 import { fetchMetadata } from "../firebase/utils/fetchMetadata";
 import { YoutubeVideo } from "../components/YoutubeVideo";
 import { YoutubeVideoType } from "../types/YoutubeDataType";
 
-const Home: NextPage = () => {
-  const [isLoading, setIsLoading] = useState(true);
 
-  const [sdcBookInfo, setSdcBookInfo] = useState("");
-  const [artAgingBookInfo, setArtAgingBookInfo] = useState("");
-  const [youtubeVideosData, setYoutubeVideosData] = useState<
-    YoutubeVideoType[]
-  >([]);
+export async function getStaticProps() {
 
+  const pageMetdata = await fetchMetadata(db, "home")
+
+  const sdcBookInfo = pageMetdata!.sdc__section__info;
+  const artAgingBookInfo = pageMetdata!.art__aging__section__info;
+  const youtubeVideosData = pageMetdata!.youtube__videos;
+
+  return {
+    props: {
+      sdcBookInfo,
+      artAgingBookInfo,
+      youtubeVideosData
+    }
+  }
+  
+}
+
+type Props = {
+  sdcBookInfo:string;
+  artAgingBookInfo:string;
+  youtubeVideosData:YoutubeVideoType[];
+}
+
+const Home = (props:Props) => {
   const booksSectionRef = useRef<null | HTMLDivElement>(null);
-
-  useEffect(() => {
-    fetchMetadata(db, "home")
-      .then((doc) => {
-        setSdcBookInfo(doc!.sdc__section__info);
-        setArtAgingBookInfo(doc!.art__aging__section__info);
-        setYoutubeVideosData(doc!.youtube__videos);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
 
   const handleScrollClick = () => {
     booksSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-  if (isLoading) {
-    return <Loading />;
-  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -124,7 +125,7 @@ const Home: NextPage = () => {
         <div className={styles.book__cover__section}>
           <div className={styles.book__section} data-aos="fade-right">
             <div className={styles.book__bio}>
-              <p className={styles.book__bio__text}>{sdcBookInfo}</p>
+              <p className={styles.book__bio__text}>{props.sdcBookInfo}</p>
 
               <Link href="/books/swedish-death-cleaning">
                 <div className={styles.death__cleaning__more__button}>
@@ -146,7 +147,7 @@ const Home: NextPage = () => {
 
           <div className={styles.book__section} data-aos="fade-left">
             <div className={styles.book__bio}>
-              <p className={styles.book__bio__text}>{artAgingBookInfo}</p>
+              <p className={styles.book__bio__text}>{props.artAgingBookInfo}</p>
               <Link href="/books/art-of-aging">
                 <div className={styles.art__aging__more__button}>
                   Learn More <CgChevronRight />{" "}
@@ -172,7 +173,7 @@ const Home: NextPage = () => {
         <p className={styles.videos__section__title}>Videos</p>
         <div className={styles.title__underline} />
         <Carousel>
-          {youtubeVideosData.map((video, i) => {
+          {props.youtubeVideosData.map((video, i) => {
             return (
               <div className={carousel__styles.embla__slide} key={i}>
                 <div className={styles.video__container}>

@@ -194,7 +194,10 @@
 }
 .international__cover__container {
   width: 15rem;
-  margin: 1rem;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .slide__container {
@@ -204,35 +207,13 @@
   width: 80%;
 }
 
-.uk__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem;
-}
-
-.uk__cover__container {
-  width: 20rem;
-  cursor: pointer;
-}
-
 @media (max-width: 960px) {
-  .uk__cover__container {
-    width: 18rem;
-    cursor: pointer;
-  }
-
   .international__cover__container {
     width: 13rem;
   }
 }
 
 @media (max-width: 840px) {
-  .uk__cover__container {
-    width: 15rem;
-    cursor: pointer;
-  }
-
   .international__cover__container {
     width: 10rem;
   }
@@ -244,11 +225,6 @@
   font-family: "Hind Madurai", sans-serif;
 }
 @media (max-width: 680px) {
-  .uk__cover__container {
-    width: 12rem;
-    cursor: pointer;
-  }
-
   .international__cover__container {
     width: 8rem;
   }
@@ -257,11 +233,6 @@
   }
 }
 @media (max-width: 540px) {
-  .uk__cover__container {
-    width: 10rem;
-    cursor: pointer;
-  }
-
   .international__cover__container {
     width: 6rem;
   }
@@ -270,11 +241,6 @@
   }
 }
 @media (max-width: 440px) {
-  .uk__cover__container {
-    width: 8.5rem;
-    cursor: pointer;
-  }
-
   .international__cover__container {
     width: 5rem;
   }

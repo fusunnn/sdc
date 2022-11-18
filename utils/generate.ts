@@ -1,34 +1,30 @@
+import { InternationalCover } from "../types/InternationalCover";
+
 export const generateUrls = (
-  internationalEndpoints: string[],
+  internationalEndpoints: InternationalCover[],
   base: string
-): string[] => {
+): InternationalCover[] => {
   var returnValue = [];
   for (var i in internationalEndpoints) {
-    returnValue.push(base + internationalEndpoints[i]);
+    returnValue.push({
+      imageSrc: base + internationalEndpoints[i].imageSrc,
+      url: internationalEndpoints[i].url,
+    });
   }
 
   return returnValue;
 };
 
-export const generateUrlList = (urls: string[]) => {
-  var returnValue: string[][] = [[]];
-  for (let i = 0; i < urls.length; i++) {
-    if (i >= 2) {
-      let j = i + 1;
-      if (j % 3 == 0) {
-        returnValue.push([urls[i]]);
-      } else {
-        returnValue[Math.floor(j / 3)] = [
-          ...returnValue[Math.floor(j / 3)],
-          urls[i],
-        ];
-      }
+export const generateCoversList = (covers: InternationalCover[]) => {
+  var returnValue: InternationalCover[][] = [];
+
+  for (let i = 0; i < covers.length; i++) {
+    if (i % 3 == 0) {
+      returnValue[returnValue.length] = [covers[i]];
     } else {
-      returnValue[Math.floor(i / 3)] = [
-        ...returnValue[Math.floor(i / 3)],
-        urls[i],
-      ];
+      returnValue[returnValue.length - 1].push(covers[i]);
     }
   }
+
   return returnValue;
 };

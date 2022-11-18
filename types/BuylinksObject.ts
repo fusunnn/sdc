@@ -1,16 +1,16 @@
 import { StaticImageData } from "next/image";
 
-export type Buylink = {
+export type ClickableImage = {
   url: string;
   imageSrc: StaticImageData;
 };
 
 type BuylinksObject = {
-  amazon: Buylink;
-  barnesnobles: Buylink;
-  bookshop: Buylink;
-  simonschuster: Buylink;
-  apple: Buylink;
+  amazon: ClickableImage;
+  barnesnobles: ClickableImage;
+  bookshop: ClickableImage;
+  simonschuster: ClickableImage;
+  apple: ClickableImage;
 };
 
 export default BuylinksObject;

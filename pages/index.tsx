@@ -1,18 +1,18 @@
-import { useRef } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 
-import styles from "../styles/Home.module.css";
 import carousel__styles from "../styles/components/Carousel.module.css";
+import styles from "../styles/Home.module.css";
 
-import Stripes from "../public/assets/hp-pt-stripes.png";
-import Walk from "../public/assets/sketches/dleh.png";
-import Crabs from "../public/assets/sketches/crabs.png";
-import TeaCups from "../public/assets/sketches/tea-cups.png";
-import DeathCleaningCover from "../public/assets/covers/sdc/3dcover.png";
 import ArtOfAgingCover from "../public/assets/covers/art-aging/3dcover.png";
+import DeathCleaningCover from "../public/assets/covers/sdc/3dcover.png";
+import Stripes from "../public/assets/hp-pt-stripes.png";
+import Crabs from "../public/assets/sketches/crabs.png";
+import Walk from "../public/assets/sketches/dleh.png";
+import TeaCups from "../public/assets/sketches/tea-cups.png";
 
 import { CgChevronRight } from "react-icons/cg";
 import Carousel from "../components/Carousel";
@@ -157,8 +157,43 @@ const Home: NextPage = () => {
                 height="534"
                 src="https://www.youtube.com/embed/yv6fBOZlMgE"
                 title="The Gentle Art of Swedish Death Cleaning"
-                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+          <div className={carousel__styles.embla__slide}>
+            <div className={styles.video__container}>
+              <iframe
+                width="414"
+                height="736"
+                src="https://www.youtube.com/embed/cF9fqP8H8UU"
+                title="Aging with Style: Wear Stripes, Feel Alive"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+          <div className={carousel__styles.embla__slide}>
+            <div className={styles.video__container}>
+              <iframe
+                width="414"
+                height="736"
+                src="https://www.youtube.com/embed/72d2jdFKfhg"
+                title="Is Chocolate the Secret to a Long Happy Life?"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+          <div className={carousel__styles.embla__slide}>
+            <div className={styles.video__container}>
+              <iframe
+                width="414"
+                height="736"
+                src="https://www.youtube.com/embed/1GhjpBvjolg"
+                title="The Secret to Aging: Gin and Tonic"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               ></iframe>
             </div>

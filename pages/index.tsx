@@ -153,6 +153,18 @@ const Home: NextPage = () => {
           <div className={carousel__styles.embla__slide}>
             <div className={styles.video__container}>
               <iframe
+                width="800"
+                height="450"
+                src="https://www.youtube.com/embed/97sG2vKgmb0"
+                title="The Gentle Art Of Swedish Death Cleaning | Official Trailer | Peacock Original"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+          <div className={carousel__styles.embla__slide}>
+            <div className={styles.video__container}>
+              <iframe
                 width="950"
                 height="534"
                 src="https://www.youtube.com/embed/yv6fBOZlMgE"

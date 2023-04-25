@@ -3,6 +3,34 @@ import Quote from "../../../types/Quote";
 export const quotes: Quote[] = [
   {
     quote:
+      "With wry humor and wit, [Magnusson’s] advice avoids the tropes commonly found in a heavily youth-worshipping market obsessed with optimization…Magnusson shares enough short tidbits from a wealth of personal experiences to leave readers wondering what she possibly could have missed out on. And that is where the beauty in this story lies. Magnusson’s hybrid memoir, with its cheeky and concise prose, will engage readers of all ages in a way that the sometimes-obvious advice for aging may not…Magnusson is a wonderful storyteller full of wisdom, and this book embodies her attitude of exuberance.",
+    source: "The Washington Post",
+  },
+  {
+    quote:
+      "[THE SWEDISH ART OF AGING EXUBERANTLY] shows us how to prepare for and understand the aging process, and the joys and sorrows it can bring.",
+    source: "Buzzfeed",
+  },
+  {
+    quote: "The Swedish secret to a decluttered life.",
+    source: "Oprah Daily",
+  },
+  {
+    quote: "A wise, gentle reminder to grab life by both hands",
+    source: "Woman & Home",
+  },
+  {
+    quote:
+      "This beguiling collection of essays from sprightly 86-year-old Margareta Magnusson shares some salient lessons on how to embrace life, whatever your age. Cheerful, chatty and chock-full of advice that's easy to follow",
+    source: "Simple Things Magazine",
+  },
+  {
+    quote:
+      "Margareta writes with humour and empathy….Magnusson's is a soothing, grandmotherly voice",
+    source: "Vogue",
+  },
+  {
+    quote:
       "A warm, accessible guide to ageing with grace and art (and chocolate). I loved it.",
     source:
       "Matt Haig, Author of the International Best Seller Reasons to Stay Alive",
